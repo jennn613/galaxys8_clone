@@ -96,26 +96,9 @@
   background-color: var(--color-skyblue);
 } */
 
-.header_toggle {
-  position: relative;
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-}
 .header_toggle > a {
-  display: block;
-  width: 100%;
-  height: 100%;
   padding-bottom: 2px;
   transition: all 0s linear;
-}
-
-.header_toggle > a > span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  margin-bottom: 8px;
 }
 
 .header_toggle a:hover {
@@ -137,12 +120,6 @@
   width: 100%;
   height: inherit;
   background-color: inherit;
-}
-
-.header_toggle a:hover > span:first-child::before {
-  top: -12px;
-  opacity: 0;
-  transition: all 300ms ease;
 }
 
 .header_toggle a > span:nth-last-child(2) {

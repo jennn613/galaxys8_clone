@@ -37,11 +37,32 @@
   height: auto;
 }
 
+.header_name > span {
+  float: left;
+}
+
+.header_name > span:first-child {
+  position: relative;
+  margin-right: 16px;
+}
+
+.header_name > span:first-child::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%);
+}
+
 .header_toggle {
   width: 30px;
   height: auto;
-  background-color: aqua;
   cursor: pointer;
+  position: relative;
 }
 
 .header_toggle > a {
@@ -49,6 +70,8 @@
   width: 100%;
   height: 100%;
   flex-direction: column;
+  padding-bottom: 2px;
+  transition: all 0s linear;
 }
 
 .header_toggle > a > span {
@@ -62,6 +85,58 @@
 .header_toggle > a > span:last-child {
   margin-bottom: 0;
 }
+
+/* toggle hover 작업 */
+
+.header_toggle a:hover {
+  transform: translateY(-3px);
+  transition: all 300ms linear;
+}
+
+.header_toggle > a > span:first-child {
+  position: relative;
+  top: 0;
+}
+
+.header_toggle > a > span:first-child::before {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  position: absolute;
+  top: 0;
+}
+
+.header_toggle > a:hover > span:first-child::before {
+  top: -10px;
+  opacity: 0;
+  transition: all 400ms ease;
+}
+
+.header_toggle > a > span:nth-last-child(2) {
+  position: absolute;
+  bottom: -2px;
+  margin-bottom: 0;
+}
+
+.header_toggle a:hover > span:nth-last-child(2) {
+  display: none;
+}
+
+.header_toggle a > span:last-child {
+  opacity: 0;
+  position: absolute;
+  bottom: -10px;
+}
+
+.header_toggle a:hover > span:last-child {
+  opacity: 1;
+  bottom: -2px;
+  transition: all 400ms ease;
+}
+
+/* */
 
 .header_nav {
   width: 90%;
