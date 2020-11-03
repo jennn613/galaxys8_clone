@@ -1,244 +1,86 @@
 #wrap {
-  min-width: 1200px;
-  max-width: 1900px;
+  width: 100%;
   height: auto;
   background-color: white;
 }
-
-/* header */
 
 #header_wrap {
   width: 100%;
   height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: var(--color-black);
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+  font-weight: var(--weight-bold);
   text-transform: uppercase;
-  font-weight: var(--weight-extrabold);
-}
-.header_logo {
-  width: auto;
-  height: auto;
-  font-size: 20px;
+  color: white;
 }
 
-.header_phone {
-  width: auto;
-  height: auto;
-  font-size: 18px;
-}
-
-.header_phone > span {
-  float: left;
-}
-
-.header_phone > span:first-child {
-  position: relative;
-  margin-right: 16px;
-}
-
-.header_phone > span:first-child::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 90%;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  right: -8px;
-  transform: translateY(-50%);
-}
-
-.header_column {
+.header_info {
   width: 90%;
   height: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
 }
 
-.header_nav {
-  width: 100%;
-  height: 40%;
-  color: white;
-
-  display: flex;
-  justify-content: center;
-  font-size: 14px;
+.header_logo {
+  width: auto;
+  height: auto;
 }
 
-.header_nav_list {
-  display: block;
-  width: 90%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid var(--color-letter-grey);
-}
-
-.header_nav_list_item:not(:last-child) {
-  margin-right: 40px;
-}
-
-.header_nav_list_item::before {
-  display: block;
-  width: 30px;
-  height: 1px;
-  background-color: var(--color-skyblue);
+.header_name {
+  width: auto;
+  height: auto;
 }
 
 .header_toggle {
-  position: relative;
   width: 30px;
   height: auto;
-  /* background-color: teal; */
+  background-color: aqua;
   cursor: pointer;
 }
+
 .header_toggle > a {
   display: block;
   width: 100%;
   height: 100%;
-  padding-bottom: 2px;
-  transition: all 0s linear;
+  flex-direction: column;
 }
+
 .header_toggle > a > span {
   display: block;
   width: 100%;
   height: 2px;
   background-color: white;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.header_toggle a:hover {
-  transform: translateY(-3px);
-  transition: all 300ms linear;
-}
-.header_toggle > a > span:first-child {
-  position: relative;
-  top: 0;
-}
-.header_toggle > a > span:first-child::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: inherit;
-  background-color: inherit;
-}
-
-.header_toggle a:hover > span:first-child::before {
-  top: -14px;
-  opacity: 0;
-  transition: all 300ms ease;
-}
-.header_toggle a > span:nth-last-child(2) {
-  position: absolute;
-  margin-bottom: 0;
-  bottom: -2px;
-  left: 0;
-}
-
-.header_toggle a:hover > span:nth-last-child(2) {
-  display: none;
-}
-
-.header_toggle a > span:last-child {
-  /* display: none; */
-  opacity: 0;
-  position: absolute;
-  bottom: -16px;
-  left: 0;
-  margin-bottom: 0;
-}
-
-.header_toggle a:hover > span:last-child {
-  opacity: 1;
-  bottom: -2px;
-  transition: all 300ms ease;
-}
-/* 
-.header_toggle:hover > a > span:nth-child(2) {
-  position: absolute;
-  bottom: 16px;
-}
 .header_toggle > a > span:last-child {
   margin-bottom: 0;
-  position: absolute;
-  bottom: 0;
 }
 
-.header_toggle:hover > a > span:last-child {
-  bottom: 6px;
-  opacity: 0;
-} */
-
-/* section */
-#contents_wrap {
-  width: 100%;
-  height: auto;
-}
-/* section phone */
-
-#section_phone {
-  width: 100%;
-  height: 781px;
+.header_nav {
+  width: 90%;
+  height: 40%;
+  display: flex;
+  border-top: 1px solid var(--color-letter-grey);
 }
 
-.phone_wrap {
+.header_nav_list {
+  display: block;
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.phone_background {
-  width: 100%;
-  height: auto;
-  background: url("../css/img_galaxy/background/galaxy-s8_kv-l.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-/* section2 */
-
-#section_text {
-  width: 100%;
-}
-.text_wrap {
-  width: 100%;
-  background-color: var(--color-back-light-grey);
+.header_nav_list_item:not(:last-child) {
+  margin-right: 30px;
 }
 
-/* section color */
-
-#section_color {
-  width: 100%;
-}
-/* article specifications */
-#article_specifications {
-  width: 100%;
-}
-/* article camera */
-
-#article_camera {
-  width: 100%;
-}
-
-.camera_background {
-  background: url("../css/img_galaxy/background/galaxy-z-flip_jump-to_s20_banner.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-/* footer */
-#footer_wrap {
-  width: 100%;
-}
+/* header */

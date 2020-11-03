@@ -1,6 +1,10 @@
 @import "./reset.css";
 @import "./style.css";
 
+body {
+  font-size: 16px;
+}
+
 :root {
   --font-h1: 54px;
   --font-h2: 36px;
@@ -46,4 +50,10 @@ h3 {
 p {
   font-size: var(--font-p);
   /* font-weight: var(--weight-extrabold); */
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
