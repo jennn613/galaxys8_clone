@@ -1,0 +1,48 @@
+@import "./reset.css";
+@import "./style.css";
+
+:root {
+  --font-h1: 54px;
+  --font-h2: 36px;
+  --font-h3: 26px;
+  --font-p: 20px;
+
+  /* weight */
+
+  --weight-extrabold: 800;
+  --weight-bold: 600;
+  --weight-normal: 500;
+  --weight-light: 400;
+
+  /* color */
+
+  --color-black: #000000;
+  --color-light-black: #181818;
+  --color-back-light-grey: #f4f4f4;
+  --color-back-grey: #e2e2e2;
+  --color-letter-grey: #747474;
+  /* #181818 <> 색 */
+  --color-white: #ffffff;
+  --color-skyblue: #00a1cd;
+  --color-midnight-black: #000000;
+  --color-coral-blue: #698ac4;
+  --color-rose-pink: #ce9da5;
+}
+
+h1 {
+  font-size: var(--font-h1);
+  font-weight: var(--weight-extrabold);
+}
+h2 {
+  font-size: var(--font-h2);
+  font-weight: var(--weight-extrabold);
+}
+h3 {
+  font-size: var(--font-h3);
+  font-weight: var(--weight-bold);
+}
+
+p {
+  font-size: var(--font-p);
+  /* font-weight: var(--weight-extrabold); */
+}
