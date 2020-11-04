@@ -17,6 +17,7 @@
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   color: white;
+  z-index: 10000;
 }
 
 .header_info {
@@ -25,18 +26,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .header_logo {
   width: auto;
   height: auto;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .header_name {
   width: auto;
   height: auto;
-  font-size: 18px;
+  font-size: 20px;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header_name > span {
@@ -46,6 +52,7 @@
 .header_name > span:first-child {
   position: relative;
   margin-right: 16px;
+  /* 수정 */
 }
 
 .header_name > span:first-child::after {
@@ -143,48 +150,62 @@
 .header_nav {
   width: 90%;
   height: 40%;
-  display: flex;
+
   border-top: 1px solid var(--color-letter-grey);
   font-size: 14px;
+  /* position: relative; */
 }
 
 .header_nav_list {
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  /* position: absolute; */
+  /* top: 50%;
+  transform: translatey(-50%);
+  left: 50%;
+  transform: translateX(-50%); */
+  margin-top: 12px;
+}
+
+.header_nav_list_item {
+  display: inline-block;
 }
 
 .header_nav_list_item:not(:last-child) {
   margin-right: 30px;
 }
 
+/* .header_nav_list_item::before {
+  content: "";
+  display: block;
+  width: 10px;
+  /* 나중에 값 받아오기 */
+/* height: 2px;
+  background-color: var(--color-skyblue);
+}  */
+
 /* header */
 
 /* section */
 
-.contents_wrap {
+#contents_wrap {
   width: 100%;
   height: auto;
 }
 
 /* */
 
-.section_intro_wrap {
+#section_intro_wrap {
   width: 100%;
-  height: 790px;
-  /* 나중에 높이 수정 */
+  height: auto;
   position: relative;
 }
 
 .intro_background {
   width: 100%;
   height: 100%;
-  /* position: absolute;
-  left: 0;
-  bottom: 0; */
 }
 
 .intro_background > img {
@@ -195,19 +216,24 @@
 .intro_text {
   width: auto;
   height: auto;
+  font-size: var(--font-h1);
+  font-weight: var(--weight-extrabold);
+  position: absolute;
+
+  left: 50%;
 }
 
 /*  */
 
 #section_text_wrap {
   width: 100%;
-  height: 575px;
+  height: auto;
   /* 높이 수정 */
   background-color: var(--color-back-light-grey);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 50px;
+  padding: 195px 100px;
   /* 패딩 수정 */
   box-sizing: border-box;
 }
@@ -222,7 +248,7 @@
 
 #section_color_wrap {
   width: 100%;
-  height: 908px;
+  height: auto;
   /* 높이 수정 */
   background-color: hotpink;
   display: flex;
@@ -232,7 +258,45 @@
 .color_nav {
   width: 100%;
   height: 20%;
-  background-color: indianred;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.color_nav_list {
+  display: block;
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+.color_nav_list_item {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.color_nav_list_item::after {
+  content: "";
+  display: block;
+  width: 20px;
+  /* 값 받아와서 수정 */
+  height: 1px;
+  background-color: black;
+}
+
+.color_nav_list_item:first-child {
+  margin-right: 80px;
+  /* 나중에 수정 */
+}
+
+.color_nav_list_item > a {
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-size: var(--font-h4);
+  font-weight: var(--weight-normal);
 }
 
 .color_show {
@@ -255,8 +319,8 @@
 
 #article_camera {
   width: 100%;
-  height: 614px;
-  position: absolute;
+  height: auto;
+  position: relative;
 }
 
 .camera_text {
@@ -264,25 +328,29 @@
   height: auto;
   background-color: salmon;
   color: white;
+  line-height: 280%;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* top: 0;
+  bottom: 0;
+  margin: auto; */
 }
 
 .camera_text > a {
   display: block;
-  width: 100px;
+  width: 120px;
   height: 30px;
   /* 나중에 수정 */
-  border: 2px solid var(--color-letter-grey);
-  border-radius: 50%;
+  border: 4px solid white;
+  border-radius: 16px;
 }
 
 .camera_img {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .camera_img > img {
@@ -293,7 +361,7 @@
 
 #footer_wrap {
   width: 100%;
-  height: 230px;
+  height: auto;
   /* background-color: white; */
   background-color: salmon;
 }
