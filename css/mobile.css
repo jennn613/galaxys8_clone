@@ -1,8 +1,7 @@
 @media only screen and (min-width: 360px) and (max-width: 780px) {
   .header_info {
-    display: block;
+    width: block;
   }
-
   .header_logo {
     display: none;
   }
@@ -11,9 +10,5 @@
     width: auto;
     height: auto;
     font-size: 20px;
-    position: absolute;
-    top: 33%;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }

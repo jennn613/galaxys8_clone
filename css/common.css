@@ -1,6 +1,6 @@
 @import "./reset.css";
 @import "./style.css";
-/* @import "./mobile.css"; */
+@import "./mobile.css";
 
 body {
   font-size: 16px;
@@ -27,6 +27,7 @@ body {
   --color-back-light-grey: #f4f4f4;
   --color-back-grey: #e2e2e2;
   --color-letter-grey: #747474;
+  --color-light-grey: #bbbbbb;
   /* #181818 <> 색 */
   --color-white: #ffffff;
   --color-skyblue: #00a1cd;
@@ -50,13 +51,19 @@ h3 {
 
 p {
   font-size: var(--font-p);
-  /* font-weight: var(--weight-extrabold); */
+  font-weight: var(--weight-normal);
 }
 
 .hidden {
   width: 0;
   height: 0;
   overflow: hidden;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
 }
 
 #wrap {
@@ -94,6 +101,7 @@ p {
   height: auto;
   position: relative;
   display: flex;
+  margin-top: 100px;
 }
 
 #section_text_wrap {
@@ -136,8 +144,8 @@ p {
 #footer_wrap {
   width: 100%;
   height: auto;
-  /* background-color: white; */
-  background-color: salmon;
-  padding: 20px 10%;
+  background-color: white;
+
+  padding: 0 10% 2% 10%;
   box-sizing: border-box;
 }

@@ -325,6 +325,7 @@
   text-transform: uppercase;
   margin-top: 40px;
   text-align: center;
+  line-height: 50px;
 }
 
 .camera_text > a:hover {
@@ -347,27 +348,220 @@
 .footer_inner {
   width: 100%;
   height: 100%;
-  background-color: violet;
-}
-
-.footer_column {
-  display: flex;
-  width: 100%;
-  height: 20%;
+  position: relative;
+  padding-top: 180px;
 }
 
 .footer_share {
+  float: left;
   width: 20%;
-  height: 100%;
-  background-color: teal;
+  height: 20%;
+  color: var(--color-light-grey);
+  font-size: 18px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.footer_share > span {
+  margin-left: 6px;
+  cursor: pointer;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  font-size: 14px;
+}
+
+.footer_share > span:hover {
+  transition: all 240ms linear;
+  transform: scale(1.05);
+}
+
+.icon_fb:hover {
+  color: #3a589e;
+}
+.icon_google:hover {
+  color: #dd4b39;
+}
+.icon_twitter:hover {
+  color: #51abf1;
+}
+.icon_linkedIn:hover {
+  color: #0477b6;
 }
 
 .footer_settings {
+  float: right;
   width: 80%;
   height: 100%;
-  background-color: wheat;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.footer_settings_color {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 40px;
+  right: 450px;
+}
+
+.footer_settings_color > a {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  border: 1px solid var(--color-light-grey);
+  background-color: white;
+  color: var(--color-letter-grey);
+  padding: 4px;
+  margin-left: 8px;
+  text-align: center;
+}
+
+.footer_settings_color > a:first-child {
+  border: 1px solid rgb(212, 199, 80);
+  color: rgb(212, 199, 80);
+  background-color: black;
+}
+
+.footer_settings_global_links {
+  display: block;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  font-size: 12px;
+}
+
+.footer_settings_network {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  position: relative;
+}
+
+.footer_settings_network > a {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--color-letter-grey);
+  color: var(--color-letter-grey);
+  padding: 4px;
+  margin-left: 14px;
+}
+
+.footer_settings_network > a > span {
+  margin-right: 6px;
+}
+
+.footer_settings_network_options {
+  width: auto;
+  height: auto;
+  background-color: lightblue;
 }
 
 .footer_settings_network_options {
   display: none;
+  position: absolute;
+  left: 0;
+}
+
+.footer_settings_global_links > a {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--color-letter-grey);
+  color: var(--color-letter-grey);
+  padding: 4px;
+}
+
+.footer_settings_global_links > a > span {
+  margin-right: 6px;
+}
+
+.footer_btns {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.footer_btns > a {
+  width: auto;
+  height: auto;
+  color: var(--color-black);
+  margin-right: 14px;
+}
+
+.footer_btns > a > span {
+  margin-right: 10px;
+}
+
+.footer_btns > a > i {
+  color: var(--color-letter-grey);
+}
+
+.footer_policy {
+  float: left;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--color-letter-grey);
+  position: relative;
+  padding-left: 120px;
+}
+
+.footer_logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  font-weight: var(--weight-extrabold);
+  color: var(--color-letter-grey);
+}
+
+.footer_policy > p {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.footer_policy_links {
+  width: 100%;
+  height: 100%;
+}
+
+.footer_policy_links > a {
+  color: var(--color-letter-grey);
+  margin-right: 16px;
+  position: relative;
+}
+
+.footer_policy_links > a::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 50%;
+  background-color: var(--color-letter-grey);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -8px;
+}
+
+.topBtn {
+  width: auto;
+  height: auto;
+  color: var(--color-letter-grey);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 40px;
+  cursor: pointer;
 }
