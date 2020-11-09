@@ -1,2 +1,263 @@
-@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+/* @media only screen and (min-width: 1025px) and (max-width: 1920px) */
+@media only screen and (min-width: 1025px) {
+  .header_info {
+    justify-content: space-between;
+  }
+
+  .header_logo {
+    font-size: 22px;
+  }
+
+  .header_name {
+    font-size: 20px;
+    position: absolute;
+    /* top: 33%; */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* toggle hover 작업 */
+
+  .header_toggle a:hover {
+    transform: translateY(-3px);
+    transition: all 300ms linear;
+  }
+
+  .header_toggle > a > span:first-child {
+    position: relative;
+    top: 0;
+  }
+
+  .header_toggle > a > span:first-child::before {
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+  }
+
+  .header_toggle > a:hover > span:first-child::before {
+    top: -10px;
+    opacity: 0;
+    transition: all 400ms ease;
+  }
+
+  .header_toggle > a > span:nth-last-child(2) {
+    position: absolute;
+    bottom: -2px;
+    margin-bottom: 0;
+  }
+
+  .header_toggle a:hover > span:nth-last-child(2) {
+    display: none;
+  }
+
+  .header_toggle a > span:last-child {
+    opacity: 0;
+    position: absolute;
+    bottom: -10px;
+  }
+
+  .header_toggle a:hover > span:last-child {
+    opacity: 1;
+    bottom: -2px;
+    transition: all 400ms ease;
+  }
+
+  .header_nav {
+    font-size: 14px;
+  }
+
+  .header_nav_list {
+    text-align: center;
+  }
+
+  .header_nav_list_item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .intro_text {
+    font-size: var(--font-h1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 55%;
+  }
+
+  #section_text_wrap {
+    padding: 195px 100px;
+  }
+
+  #section_text_wrap > p {
+    font-size: var(--font-h2);
+    line-height: 140%;
+    word-break: keep-all;
+  }
+
+  .color_nav_list {
+    font-size: 16px;
+    margin-right: 50px;
+  }
+
+  .color_show {
+    width: 1000px;
+    margin: 50px auto;
+  }
+
+  .colors {
+    float: left;
+    flex-direction: column;
+    margin-top: 240px;
+  }
+
+  .color_list {
+    margin-bottom: 40px;
+    margin-left: 30px;
+  }
+
+  .color_list::before {
+    width: 16px;
+    height: 110%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: -30px;
+  }
+
+  .color_device {
+    float: right;
+    width: 540px;
+    height: 630px;
+  }
+
+  .color_device_slider_button {
+    width: 620px;
+  }
+
+  .color_device_slider_button > a {
+    font-size: 32px;
+  }
+
+  .color_device_slider_indicator {
+    bottom: 0px;
+  }
+  .color_device_slider_indicator > a {
+    width: 14px;
+    height: 14px;
+  }
+
+  .color_device_slider_indicator > a:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .color_device_slider_img_s8 {
+    height: 92%;
+  }
+  #article_specifications {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .specifications_text > h2 {
+    margin-bottom: 30px;
+  }
+
+  .specifications_text > p {
+    margin-bottom: 20px;
+    line-height: 150%;
+  }
+  .specifications_text > a {
+    height: 50px;
+    line-height: 46px;
+    padding: 0 45px;
+
+    border-radius: 34px;
+
+    font-size: 14px;
+    letter-spacing: 2.4px;
+  }
+
+  .camera_text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    font-size: 58px;
+  }
+
+  .camera_text > a {
+    height: 50px;
+    border-radius: 58px;
+    font-size: 14px;
+    margin-top: 40px;
+    line-height: 50px;
+  }
+
+  .footer_inner {
+    padding-top: 180px;
+  }
+  .footer_share {
+    font-size: 18px;
+
+    top: 40px;
+  }
+
+  .footer_share > span {
+    margin-left: 6px;
+
+    font-size: 14px;
+  }
+
+  .footer_settings {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .footer_settings_color {
+    top: 40px;
+    right: 450px;
+    position: absolute;
+  }
+  /* 
+  .footer_settings_color > a {
+    padding: 4px;
+    margin-left: 8px;
+  } */
+
+  .footer_settings_global_links {
+    top: 40px;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+  }
+  .footer_settings_network {
+    font-size: 12px;
+  }
+
+  /* .footer_settings_network > a {
+    padding: 4px;
+    margin-left: 14px;
+  } */
+
+  .footer_policy {
+    font-size: 12px;
+    padding-left: 120px;
+  }
+
+  .footer_logo {
+    font-size: 18px;
+  }
+  .footer_policy > p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .topBtn {
+    bottom: 50px;
+    right: 80px;
+    font-size: 48px;
+  }
 }

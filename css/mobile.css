@@ -1,15 +1,23 @@
 /* @media only screen and (min-width: 401px) and (max-width: 529px) */
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 767px) {
+  /* #header_wrap {
+    left: 0;
+    transform: translateX(0);
+  } */
+
   .header_info {
-    width: block;
+    justify-content: initial;
   }
+
   .header_logo {
     display: none;
   }
 
   .header_name {
-    width: auto;
-    height: auto;
-    font-size: 20px;
+    font-size: 14px;
+  }
+
+  .header_nav {
+    font-size: 10px;
   }
 }
