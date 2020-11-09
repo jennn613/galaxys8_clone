@@ -1,5 +1,5 @@
 /* @media only screen and (min-width: 401px) and (max-width: 529px) */
-@media only screen and (max-width: 529px) {
+@media only screen and (max-width: 780px) {
   .header_info {
     width: block;
   }

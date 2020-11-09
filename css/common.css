@@ -127,7 +127,6 @@ p {
 #article_specifications {
   width: 100%;
   height: auto;
-  /* 높이 수정 */
   background-color: var(--color-back-grey);
   padding: 5% 10% 8% 10%;
   box-sizing: border-box;
