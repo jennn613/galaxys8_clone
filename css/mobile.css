@@ -51,10 +51,66 @@
     line-height: 150%;
   }
 
-  .color_nav_list {
-    font-size: 18px;
-    margin-right: 28px;
+  .device_color_wrap 
+  {width: 100%;
+    padding: 40px 0;
+ 
   }
+  .color {
+    margin: 100px auto 0 auto;
+  }
+
+  .color_nav {
+    padding-top: 26.3158vw;
+   }
+
+   .device_color_wrap{
+     flex-direction: column-reverse;
+   }
+
+
+   .color_nav_device_list > a {
+     font-size: 4.7368vw;
+
+   }
+.color_nav_device_list:not(:last-child) {
+  margin-right: 40px }
+   
+  
+   .color_list_item {
+    margin-bottom: 40px;
+   
+  }
+ 
+ 
+   .color_list_item > a 
+   {  font-size: 20px;
+  margin-left: 10.5263vw;}
+  
+   .color_list_item::before {
+ 
+    width: 18px;
+    height: 18px;
+ 
+
+  }
+
+   .color_device_pic {
+    width: 73.6842vw;
+    height: 89.4737vw;   margin: 0 auto;}
+  
+    .color_device_chevron_indicator {
+      width: 78.9474vw;}
+
+      .color_device_btn_indicator >a {
+     
+        width: 12px;
+        height: 12px;
+       
+        }
+        .color_device_btn_indicator >a:not(:last-child){
+          margin-right: 7.8947vw;
+        }
 
   
   #article_specifications {
@@ -124,7 +180,7 @@
     margin-top: 50px;
   }
 
-  .camera_img > img:first-child {
+  .camera_img > img:first-of-type {
     display: none;
   }
 

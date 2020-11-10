@@ -87,7 +87,7 @@
   }
 
    
-.intro_background > img:last-child{
+.intro_background > img:last-of-type{
   display: none;
 }
 
@@ -101,65 +101,42 @@
     word-break: keep-all;
   }
 
-  .color_nav_list {
-    font-size: 16px;
-    margin-right: 50px;
-  }
+ .color_nav {
+  padding-top: 120px;
+ }
 
-  .color_show {
-    width: 1000px;
-    margin: 50px auto;
-  }
+ .color_nav_device_list > a {
+   font-size: 28px;
+   margin-right: 40px;
+ }
 
-  .colors {
-    float: left;
-    flex-direction: column;
-    margin-top: 240px;
-  }
+ .color_list_item > a{
+  font-size: 24px;
+  margin-left: 50px;
+ }
 
-  .color_list {
-    margin-bottom: 40px;
-    margin-left: 30px;
-  }
+ .device_color_wrap {
+   width: 1100px;
+   padding: 40px 0;
+ }
 
-  .color_list::before {
-    width: 16px;
-    height: 110%;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: -30px;
-  }
+ .color_list_item {
+   margin-bottom: 50px;
+ }
+ .color_list_item > a 
+ {  font-size: 24px;}
 
-  .color_device {
-    float: right;
-    width: 540px;
-    height: 630px;
-  }
+ .color_device_pic {
+  width: 560px;
+  height: 680px;}
 
-  .color_device_slider_button {
-    width: 620px;
-  }
+  .color_device_chevron_indicator {
+    width: 600px;}
 
-  .color_device_slider_button > a {
-    font-size: 32px;
-  }
 
-  .color_device_slider_indicator {
-    bottom: 0px;
-  }
-  .color_device_slider_indicator > a {
-    width: 14px;
-    height: 14px;
-  }
 
-  .color_device_slider_indicator > a:not(:last-child) {
-    margin-right: 20px;
-  }
 
-  .color_device_slider_img_s8 {
-    height: 92%;
-  }
+
   #article_specifications {
     justify-content: space-between;
     align-items: flex-end;
@@ -172,6 +149,7 @@
     margin-bottom: 20px;
     line-height: 150%;
   }
+
   .specifications_text > a {
     height: 50px;
     line-height: 46px;
@@ -199,7 +177,7 @@
     line-height: 50px;
   }
 
-  .camera_img > img:last-child {
+  .camera_img > img:last-of-type {
     display: none;
   }
   
@@ -207,19 +185,19 @@
     padding-top: 180px;
   }
   .footer_share {
-    font-size: 18px;
+    font-size: 22px;
 
     top: 40px;
   }
 
   .footer_share > span {
-    margin-left: 6px;
+    margin-left: 12px;
 
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .footer_settings {
-    font-size: 12px;
+    font-size: 14px;
     position: absolute;
     right: 0;
     top: 0;
@@ -231,7 +209,7 @@
   
   .footer_settings_color {
     top: 40px;
-    right: 450px;
+    right: 500px;
     position: absolute;
   }
   /* 
@@ -242,12 +220,12 @@
 
   .footer_settings_global_links {
     top: 40px;
-    font-size: 12px;
+    font-size: 14px;
     position: absolute;
     right: 0;
   }
   .footer_settings_network {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   /* .footer_settings_network > a {
@@ -256,7 +234,7 @@
   } */
 
   .footer_policy {
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 120px;
   }
 
@@ -264,7 +242,7 @@
     font-size: 18px;
   }
   .footer_policy > p {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 8px;
   }
 

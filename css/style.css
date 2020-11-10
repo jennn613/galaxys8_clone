@@ -126,127 +126,161 @@
 }
 
 /*  */
-.color_nav_device {
-  width: auto;
-  height: auto;
-  position: relative;
-}
-.color_nav {
+
+.color_nav{
   width: 100%;
-  height: 20%;
+  height: 100%;
+  z-index: 10;
+
+}
+
+.color_nav_device {
+display: block;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 100;
-  padding-top: 80px;
 }
 
-.color_nav_list {
-  display: inline-block;
+.color_nav_device_list {
   width: auto;
   height: auto;
-  font-weight: var(--weight-bold);
-  color: var(--color-black);
 }
 
-/* .color_nav_list::after {
-  content: "";
+.color_nav_device_list > a {
   display: block;
-  width: 20px;
-  /* 값 받아와서 수정 */
-/* height: 1px;
-  background-color: black;
-} */
-
-.color_show {
-  height: 80%;
-  background-color: white;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  color: var(--color-black);
+  font-weight: var(--weight-bold);
 }
 
-.colors {
+.device_color_wrap {
+  height: 50%;
+  margin: 0 auto;
+position: relative;
+display: flex;
+justify-content: space-between;
+}
+
+.color {
   width: auto;
   height: auto;
-  display: flex;
+  margin-top: 200px;
+
 }
 
 .color_list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.color_list_item {
   width: auto;
   height: auto;
+}
+
+.color_list_item > a {
   position: relative;
   color: var(--color-black);
 }
 
-.color_list::before {
+.color_list_item::before {
   content: "";
-  width: 16px;
-  height: 110%;
+  display: block;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  position: absolute;
+
+  
 }
 
-.color_list:first-child::before {
+.color_list_item:first-child::before {
   background-color: var(--color-midnight-black);
 }
-.color_list:nth-child(2)::before {
+.color_list_item:nth-child(2)::before {
   background-color: var(--color-coral-blue);
 }
-.color_list:last-child::before {
+.color_list_item:last-child::before {
   background-color: var(--color-rose-pink);
 }
 
-.color_device {
-  display: flex;
-  flex-direction: column;
+.color_device_pic {
+ 
   position: relative;
 }
 
-.color_device_slider_button {
+.color_device_chevron_indicator {
+
   height: 0;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 50%;
+  top:50%;
   transform: translateY(-50%);
   left: 50%;
   transform: translateX(-50%);
-  cursor: pointer;
 }
 
-.color_device_slider_button > a {
-  display: block;
-  width: auto;
-  height: auto;
+.color_device_chevron_indicator > a{
   color: var(--color-letter-grey);
+  font-size: 32px;
 }
 
-.color_device_slider_indicator {
-  width: auto;
+.color_device_btn_indicator {
+  width: 100%;
   height: auto;
+
+  display: flex;
+  justify-content: center;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
 }
 
-.color_device_slider_indicator > a {
-  display: inline-block;
-  /* width: 14px; */
-  height: 100%;
-  border-radius: 50%;
-  border: 1px solid var(--color-black);
-  background-color: white;
+.color_device_btn_indicator >a {
+display: block;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+border: 1px solid var(--color-black);
 }
 
-.color_device_slider_img_s8 {
+.color_device_btn_indicator >a:not(:last-child){
+  margin-right: 40px;
+}
+
+.color_device_btn_indicator >a.active {
+  transform: scale(1.16);
+  background-color: black;
+}
+
+.color_device_pic_device {
+  width: 100%;
+height: 100%;}
+
+.color_device_pic_device_s8 {
   display: block;
   width: 100%;
-}
+  height: 100%;
 
-.color_device_slider_img_s8_black > figure {
+
+}
+.color_device_pic_device_s8 > li {
   width: 100%;
   height: 100%;
+
+}
+.color_device_pic_device_s8 > li > figure {
+  width: 100%;
+  height: 100%;
+
 }
 
-.color_device_slider_img_s8_black > figure > img {
+.color_device_pic_device_s8 > li > figure > img {
   width: 100%;
   height: auto;
 }
@@ -266,6 +300,7 @@
   line-height: 46px;
   padding: 0 45px; */
   border: 3px solid var(--color-black);
+  font-weight: var(--weight-bold);
   /* border-radius: 34px; */
   color: var(--color-black);
   /* font-size: 14px;
