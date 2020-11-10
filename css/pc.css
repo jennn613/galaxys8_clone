@@ -235,14 +235,16 @@
 
   .footer_policy {
     font-size: 14px;
-    padding-left: 120px;
+
   }
 
   .footer_logo {
     font-size: 18px;
+ 
   }
   .footer_policy > p {
     font-size: 14px;
+    margin-top: 16px;
     margin-bottom: 8px;
   }
 
