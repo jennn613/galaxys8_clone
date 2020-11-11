@@ -102,6 +102,53 @@ list.addEventListener('mouseleave', (a) => {
 
 //color slider
 
+//사진
+const devicePicWrap = document.querySelector('.color_device_pic_device');
+
+const deviceSlider = document.querySelector('.color_device_pic_device_s8'); //ul
+const devicePicList = deviceSlider.querySelectorAll('li');
+
+let devicePic; //figure
+let deviceImg; //img
+for(let i=0; i<devicePicList.length; i++){
+    devicePic = devicePicList[i].querySelectorAll('figure'); 
+    deviceImg = devicePic[i].querySelectorAll('img');
+}
+
+let devicePicWidth = devicePicWrap.offsetWidth; //사진 하나 가로
+
+let picShow = 1; // 보일 사진 개수
+
+//색
+const colorList = document.querySelector('.color_list'); //ul
+const colorListItems = colorList.querySelectorAll('li');
+
+//디바이스
+//const colorNav = document.querySelector('.color_nav_device'); //ul
+//const colorNavList = colorNav.querySelectorAll('li'); //li
+
+// < >
+const colorChevronWrap = document.querySelector('.color_device_chevron_indicator'); //
+const colorChevron = colorChevronWrap.querySelectorAll('a'); // chevrons
+
+// 동그라미
+const colorIndicatorWrap = document.querySelector('.color_device_btn_indicator');
+const colorIndicator = colorIndicatorWrap.querySelectorAll('a') //indicators
+
+
+deviceSlider.style.width = 'devicePicWidth' * devicePicList.length; //slider 가로 늘리기
+
+
+//for(let i =0; i <devicePicList.length; i++){
+   // speakerBoxImg[i].style.backgroundImage = 'url(../css/src/img/s'+ (i+1) +'.jpg)';} 
+for(let i=0; i<devicePicList.length; i++) {
+    deviceImg[i].src = "../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c"+i+"-0"+i+".jpg"
+}
+
+   for(let i=0; i < picShow; i++) {
+    const copyLastBox = devicePicList[devicePicList.length-(i+1)].cloneNode(true);
+    deviceSlider.prepend(copyLastBox);
+} //마지막 박스 복사 
 
 const topBtn = document.querySelector('.topBtn'); //고정된 버튼
 const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
@@ -139,8 +186,6 @@ document.addEventListener('scroll', ()=> {
 
 //footer로 스크롤시 topbtn 사라지게
 const footerWrap = document.querySelector('#footer_wrap');
-let footerY = footerWrap.getBoundingClientRect().top;
-let footerTop = window.pageYOffset + footerY;
 let wrapHeight = wrap.offsetHeight;
 let footerHeight = footerWrap.offsetHeight;
 let windowHeight = window.innerHeight;
@@ -188,40 +233,6 @@ netWorkBtn.addEventListener('click', (a) => {
 
 });
 
-
-// footer버튼 누르면 darkmode로 바꾸기
-
-const colorSettingBox = document.querySelector('.footer_settings_color'); // color button 감싼 박스
-const colorBtn = colorSettingBox.querySelectorAll('a'); // color button  2개
-const darkBtn = colorBtn[0]; //첫번째 버튼 (dark mode)
-
-//dark mode 적용시킬 elements
-// const colorMenu = document.querySelector('.color_list');
-// const colorList = colorMenu.querySelectorAll('li');
-// const colorchevronWrap = document.querySelector('.color_device_chevron_indicator');
-// const colorchevron = colorchevronWrap.querySelectorAll('a');
-// const colorIndicatorWrap = document.querySelector('.color_device_btn_indicator');
-// const colorIndicator = colorIndicatorWrap.querySelectorAll('a');
-// const specifiWrap = document.querySelector('#article_specifications');
-// const footerShare = footerWrap.querySelector('.footer_share');
-// const footerSettings = footerWrap.querySelector('.footer_settings');
-// const footerPolicy = footerWrap.querySelector('.footer_policy');
-
-// darkBtn.addEventListener('click', () => {
-
-//     colorNav.classList.add('dark');
-//     colorNavList.classList.add('dark');
-//     colorMenu.classList.add('dark');
-//     colorList.classList.add('dark');
-//     colorIndicator.classList.add('dark');
-//     colorchevron.classList.add('dark');
-//     specifiWrap .classList.add('dark');
-//     footerWrap.classList.add('dark');
-//     footerSettings.classList.add('dark');
-//     footerShare.classList.add('dark');
-//     netWorkBtnWrap.classList.add('dark');
-//     footerPolicy.classList.add('dark');
-// });
 
 // footer more 누르면 아래 div block, 보이기
 
