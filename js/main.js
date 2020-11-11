@@ -139,27 +139,22 @@ document.addEventListener('scroll', ()=> {
 
 //footer로 스크롤시 topbtn 사라지게
 const footerWrap = document.querySelector('#footer_wrap');
-let footerY = footerWrap.getBoundingClientRect().y;
-
+let footerY = footerWrap.getBoundingClientRect().top;
+let footerTop = window.pageYOffset + footerY;
+let wrapHeight = wrap.offsetHeight;
+let footerHeight = footerWrap.offsetHeight;
 let windowHeight = window.innerHeight;
-let documentHeight = wrap.getBoundingClientRect().height;
-let footerHeight = footerWrap.getBoundingClientRect().height;
 
-let setScrollTop = documentHeight - windowHeight + footerHeight;
+document.addEventListener('scroll', () => {
 
-const BtnStatus = function(){
+    if(window.scrollY > wrapHeight - windowHeight - footerHeight){
+        topBtn.style.display = 'none';
+    }
+    else {
+        topBtn.style.display = 'block';
+    }
 
-    (window.scrollY >= setScrollTop) ?    
-        topBtn.style.display= 'none': 
-        topBtn.style.display= 'block';
-
-};
-
-document.addEventListener ('scroll', ()=> {
-
-    BtnStatus();
 });
-
 
 // footer network 버튼 누르면 아래 메뉴 생기게
 
