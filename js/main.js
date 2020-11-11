@@ -65,6 +65,38 @@ list.addEventListener('mouseleave', (a) => {
 
 // color nav에 hover일 때 아래 선 나타내기
 
+const colorNav = document.querySelector('.color_nav_device'); //ul
+const colorNavList = colorNav.querySelectorAll('li'); //li
+const colorNavLine = colorNav.querySelector('.color_nav_line'); //line
+
+function showColorNavLine() {
+    colorNavLine.style.display ='block';
+    colorNavLine.style.width = colorNavList[0].offsetWidth + 'px';
+    colorNavLine.style.left= colorNavList[0].offsetLeft + 'px';
+     }
+
+colorNavList.forEach(function(list){
+    
+    showColorNavLine();
+
+list.addEventListener('mouseenter', (a) => {
+    
+    a.preventDefault();
+
+colorNavLine.style.display ='block';
+colorNavLine.style.width = list.offsetWidth + 'px';
+colorNavLine.style.left= list.offsetLeft + 'px';
+
+});
+
+list.addEventListener('mouseleave', (a) => {
+
+    a.preventDefault();
+
+        showColorNavLine();
+});
+
+});
 
 //color slider
 
@@ -143,15 +175,12 @@ netWorkBtn.addEventListener('click', (a) => {
     
     if(netWorkMenuNone) {
         netWorkMenu.style.display = 'block';
-           
-        setTimeout(function(){netWorkMenu.style.height = 'auto';}, 30);
-        setTimeout(function(){netWorkMenu.style.display = 'block';}, 30);
+        netWorkMenu.style.height = 'auto';
+       
     }
     else{
         netWorkMenu.style.display = 'none';
-              
-        setTimeout(function(){netWorkMenu.style.height = 0;}, 30);
-        setTimeout(function(){netWorkMenu.style.display = 'none';}, 30);
+        netWorkMenu.style.height = 0;
     }
 
 });

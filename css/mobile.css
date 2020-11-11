@@ -79,13 +79,14 @@
   
    .color_list_item {
     margin-bottom: 40px;
+    margin-left: 10.5263vw;
    
   }
  
  
    .color_list_item > a 
    {  font-size: 20px;
-  margin-left: 10.5263vw;}
+ }
   
    .color_list_item::before {
  

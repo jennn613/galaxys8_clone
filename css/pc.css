@@ -105,9 +105,11 @@
   padding-top: 120px;
  }
 
+ .color_nav_device_list {
+  margin-right: 40px;
+ }
  .color_nav_device_list > a {
    font-size: 28px;
-   margin-right: 40px;
  }
 
  .color_list_item > a{
