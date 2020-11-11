@@ -71,10 +71,10 @@
 
    .color_nav_device_list > a {
      font-size: 4.7368vw;
-
    }
-.color_nav_device_list:not(:last-child) {
-  margin-right: 40px }
+
+.color_nav_device_list:last-of-type
+{margin-right: 0;}
    
   
    .color_list_item {
@@ -83,18 +83,15 @@
    
   }
  
- 
    .color_list_item > a 
-   {  font-size: 20px;
+   {  font-size: 20px; 
  }
   
-   .color_list_item::before {
- 
-    width: 18px;
-    height: 18px;
- 
-
-  }
+ .color_list_item::before {
+  width: 16px;
+  height: 16px;
+ left: -28px;
+}
 
    .color_device_pic {
     width: 73.6842vw;

@@ -1,5 +1,7 @@
 'use strict';
 
+const wrap = document.querySelector('#wrap');
+
 //header불투명하게
 
 const header = document.querySelector('#header_wrap'); //header
@@ -139,28 +141,35 @@ document.addEventListener('scroll', ()=> {
 const footerWrap = document.querySelector('#footer_wrap');
 let footerY = footerWrap.getBoundingClientRect().y;
 
-document.addEventListener ('scroll', ()=> {
-    
-    if(window.scrollY > footerY)
-    {
-        topBtn.style.display= 'none';
-    }
-    else {
-        topBtn.style.display= 'block';
-    }
+let windowHeight = window.innerHeight;
+let documentHeight = wrap.getBoundingClientRect().height;
+let footerHeight = footerWrap.getBoundingClientRect().height;
 
+let setScrollTop = documentHeight - windowHeight + footerHeight;
+
+const BtnStatus = function(){
+
+    (window.scrollY >= setScrollTop) ?    
+        topBtn.style.display= 'none': 
+        topBtn.style.display= 'block';
+
+};
+
+document.addEventListener ('scroll', ()=> {
+
+    BtnStatus();
 });
 
 
 // footer network 버튼 누르면 아래 메뉴 생기게
 
-const netWorkBtnWrap = document.querySelector('.footer_settings_network');
-const netWorkBtn = netWorkBtnWrap.querySelector('dt');
-let netWorkBtnHeight = netWorkBtn.offsetHeight;
-let netWorkBtnWidth = netWorkBtn.offsetWidth;
+const netWorkBtnWrap = document.querySelector('.footer_settings_network'); //dl
+const netWorkBtn = netWorkBtnWrap.querySelector('dt'); //dt
+let netWorkBtnHeight = netWorkBtn.offsetHeight; // dt height
+let netWorkBtnWidth = netWorkBtn.offsetWidth; // dt height
 
-const netWorkMenu = netWorkBtnWrap.querySelector('dd');
-const netWorkMenuList = netWorkMenu.querySelectorAll('a');
+const netWorkMenu = netWorkBtnWrap.querySelector('dd'); //dd
+const netWorkMenuList = netWorkMenu.querySelectorAll('a'); // dd의 a 
 
 
 netWorkBtn.addEventListener('click', (a) => {
@@ -188,18 +197,37 @@ netWorkBtn.addEventListener('click', (a) => {
 
 // footer버튼 누르면 darkmode로 바꾸기
 
-// const colorSettingBox = document.querySelector('.footer_settings_color');
-// const colorBtn = colorSettingBox.querySelectorAll('a');
-// const darkBtn = colorBtn[0];
-// const all = document.documentElement;
+const colorSettingBox = document.querySelector('.footer_settings_color'); // color button 감싼 박스
+const colorBtn = colorSettingBox.querySelectorAll('a'); // color button  2개
+const darkBtn = colorBtn[0]; //첫번째 버튼 (dark mode)
 
-// darkBtn.addEventListener('click', (a) => {
+//dark mode 적용시킬 elements
+// const colorMenu = document.querySelector('.color_list');
+// const colorList = colorMenu.querySelectorAll('li');
+// const colorchevronWrap = document.querySelector('.color_device_chevron_indicator');
+// const colorchevron = colorchevronWrap.querySelectorAll('a');
+// const colorIndicatorWrap = document.querySelector('.color_device_btn_indicator');
+// const colorIndicator = colorIndicatorWrap.querySelectorAll('a');
+// const specifiWrap = document.querySelector('#article_specifications');
+// const footerShare = footerWrap.querySelector('.footer_share');
+// const footerSettings = footerWrap.querySelector('.footer_settings');
+// const footerPolicy = footerWrap.querySelector('.footer_policy');
 
-// a.preventDefault();
-// all.classList.add('dark');
+// darkBtn.addEventListener('click', () => {
 
-// })
-
+//     colorNav.classList.add('dark');
+//     colorNavList.classList.add('dark');
+//     colorMenu.classList.add('dark');
+//     colorList.classList.add('dark');
+//     colorIndicator.classList.add('dark');
+//     colorchevron.classList.add('dark');
+//     specifiWrap .classList.add('dark');
+//     footerWrap.classList.add('dark');
+//     footerSettings.classList.add('dark');
+//     footerShare.classList.add('dark');
+//     netWorkBtnWrap.classList.add('dark');
+//     footerPolicy.classList.add('dark');
+// });
 
 // footer more 누르면 아래 div block, 보이기
 
