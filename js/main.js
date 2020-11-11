@@ -15,11 +15,86 @@ topBtn.addEventListener('click', ()=> {
 
 });
 
-footerBtn[1].addEventListener('click', (e)=> {
-    e.preventDefault();
+footerBtn[1].addEventListener('click', (a)=> {
+    a.preventDefault();
     scrollTop();
 
 });
+
+
+//header불투명하게
+
+const header = document.querySelector('#header_wrap'); //header
+let headerHeight = header.clientHeight;
+
+document.addEventListener ('scroll', ()=> {
+    
+    if(window.scrollY > headerHeight)
+    {
+        header.style.opacity= '0.9';
+    }
+    else {
+        header.style.opacity= '1';
+    }
+
+});
+
+
+//heaer 메뉴에 hover일 때 ::before 나타내기
+
+// const headerList = document.querySelectorAll('.header_nav_list_item');
+// const headerListBefore = getComputedStyle(headerList, ':before').content;
+// console.log(headerListBefore)
+
+// let headerListWidth = headerList[0].offsetWidth;
+
+// headerList.addEventListener('mouseenter', (a)=> {
+// a.preventDefault();
+// headerListBefore.style.display ='block';
+// headerListBefore.style.width = headerListWidth + 'px';
+// });
+
+// headerList.addEventListener('mouseleave', (a)=> {
+// a.preventDefault();
+// headerListBefore.style.display ='block';
+// headerListBefore.style.width = headerListWidth + 'px';
+// });
+
+// color 메뉴에 hover일 때 ::after 나타내기
+
+
+
+//color slider
+
+
+//footer 버튼 누르면 아래 메뉴 생기게
+
+const netWorkBtn = document.querySelector('.footer_settings_network');
+
+const netWorkMode = document.querySelector('.footer_settings_network_options');
+
+netWorkBtn.addEventListener('click', (a) => {
+
+    a.preventDefault();
+    netWorkMode.style.display = 'block';
+    netWorkMode.style.height = 'auto';
+})
+
+
+// footer버튼 누르면 darkmode로 바꾸기
+
+// const colorSettingBox = document.querySelector('.footer_settings_color');
+// const colorBtn = colorSettingBox.querySelectorAll('a');
+// const darkBtn = colorBtn[0];
+// const all = document.documentElement;
+
+// darkBtn.addEventListener('click', (a) => {
+
+// a.preventDefault();
+// all.classList.add('dark');
+
+// })
+
 
 //footer로 스크롤시 topbtn 사라지게
 const footerWrap = document.querySelector('#footer_wrap');
@@ -33,23 +108,6 @@ document.addEventListener ('scroll', ()=> {
     }
     else {
         topBtn.style.display= 'block';
-    }
-
-});
-
-//헤더 불투명하게
-
-const header = document.querySelector('#header_wrap'); //header
-let headerHeight = header.clientHeight;
-
-document.addEventListener ('scroll', ()=> {
-    
-    if(window.scrollY > headerHeight)
-    {
-        header.style.opacity= '0.9';
-    }
-    else {
-        header.style.opacity= '1';
     }
 
 });
