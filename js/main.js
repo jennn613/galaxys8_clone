@@ -122,21 +122,38 @@ document.addEventListener ('scroll', ()=> {
 
 // footer network 버튼 누르면 아래 메뉴 생기게
 
-const netWorkBtnParent = document.querySelector('.footer_settings_network');
-let netWorkBtnHeight = netWorkBtnParent.offsetHeight;
-const netWorkBtn = netWorkBtnParent.querySelectorAll('a');
-let netWorkBtnWidth = netWorkBtn[0].offsetWidth;
-const netWorkMode = netWorkBtnParent.querySelector('.footer_settings_network_options');
+const netWorkBtnWrap = document.querySelector('.footer_settings_network');
+const netWorkBtn = netWorkBtnWrap.querySelector('dt');
+let netWorkBtnHeight = netWorkBtn.offsetHeight;
+let netWorkBtnWidth = netWorkBtn.offsetWidth;
 
-netWorkBtn[0].addEventListener('click', (a) => {
+const netWorkMenu = netWorkBtnWrap.querySelector('dd');
+const netWorkMenuList = netWorkMenu.querySelectorAll('a');
+
+
+netWorkBtn.addEventListener('click', (a) => {
 
     a.preventDefault();
-    netWorkMode.style.width = netWorkBtnWidth + 'px';
-    netWorkMode.style.top = netWorkBtnHeight + 'px';
-    netWorkMode.style.display = 'block';
+    netWorkMenu.style.width = netWorkBtnWidth + 'px';
+    
+    netWorkMenu.style.top = netWorkBtnHeight + 'px';
+    
+    const netWorkMenuNone =  window.getComputedStyle(netWorkMenu).display === 'none';
 
-    // if()
-    // { netWorkMode.style.display = 'none';}
+    
+    if(netWorkMenuNone) {
+        netWorkMenu.style.display = 'block';
+           
+        setTimeout(function(){netWorkMenu.style.height = 'auto';}, 30);
+        setTimeout(function(){netWorkMenu.style.display = 'block';}, 30);
+    }
+    else{
+        netWorkMenu.style.display = 'none';
+              
+        setTimeout(function(){netWorkMenu.style.height = 0;}, 30);
+        setTimeout(function(){netWorkMenu.style.display = 'none';}, 30);
+    }
+
 });
 
 

@@ -365,7 +365,7 @@
 .footer_share {
   float: left;
   width: auto;
-  height: 20%;
+  height: 40%;
   color: var(--color-light-grey);
   position: absolute;
   left: 0;
@@ -416,14 +416,15 @@
   background-color: white;
   color: var(--color-letter-grey);
   text-align: center;
-  padding: 4px;
-  margin-left: 8px;
+  padding: 4px 6px;
+
 }
 
 .footer_settings_color > a:first-child {
   border: 1px solid rgb(212, 199, 80);
   color: rgb(212, 199, 80);
   background-color: black;
+  margin-right: 8px;
 }
 
 .footer_settings_global_links {
@@ -432,57 +433,66 @@
 }
 
 .footer_settings_network {
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-}
-
-.footer_settings_network > a {
-  display: inline-block;
+  float: left;
   width: auto;
   height: auto;
+  position: relative;
+}
+
+.footer_settings_network > dt {
+  display: inline-block;
+  width: auto;
+  height: 100%;
   border: 1px solid var(--color-letter-grey);
-  color: var(--color-letter-grey);
+  position: relative;
   padding: 4px;
 }
 
-.footer_settings_network > a > span {
+.footer_settings_network > dt > a > span,
+.footer_settings_network > dt > a > i{
+  color: var(--color-letter-grey);
+}
+
+.footer_settings_network > dt > a > span
+{
   margin-right: 8px;
 }
 
-.footer_settings_network_options {
+.footer_settings_network > dd {
   display: none;
-  position: absolute;
-  padding: 8px 0;
-  left: 0;
+  height: 0;
   border: 1px solid var(--color-letter-grey);
   border-top: none;
+  background-color: white;
+  padding: 0.7813vw 0.3906vw;
   text-align: center;
 }
 
-.footer_settings_network_options > a {
+.footer_settings_network > dd > a {
   display: block;
   width: 100%;
   height: 100%;
   color: var(--color-letter-grey);
- 
+
 }
-.footer_settings_network_options > a:first-child{
-  margin-bottom: 12px;
+
+.footer_settings_network > dd > a:first-child {
+  margin-bottom: 10px;
 }
 
 .footer_settings_global_links > a {
-  display: inline-block;
+  float: left;
+  display: block;
   width: auto;
   height: auto;
   border: 1px solid var(--color-letter-grey);
   color: var(--color-letter-grey);
   padding: 4px;
+  margin-left: 20px;
 }
 
 .footer_settings_global_links > a > span {
-  margin-right: 6px;
+  margin-right: 8px;
 }
 
 .footer_btns {
@@ -565,7 +575,7 @@
 .footer_sitemap > div {
   width: 100%;
   height: 1000px;
-}
+} */
 
 .topBtn {
   display: none;
