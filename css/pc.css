@@ -204,13 +204,14 @@
   }
   .footer_settings_network > a {
   
-    margin-left: 14px;
+    margin-right: 14px;
   }
   
   .footer_settings_color {
     top: 40px;
     right: 500px;
     position: absolute;
+    margin-right: 14px;
   }
   /* 
   .footer_settings_color > a {
@@ -249,6 +250,7 @@
   }
 
   .topBtn {
+    display: block;
     bottom: 50px;
     right: 80px;
     font-size: 48px;

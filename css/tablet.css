@@ -185,7 +185,9 @@
 
   .footer_settings_network > a {
   
-    margin-left: 14px;
+    margin-right: 14px;
+  }
+  .footer_settings_color{ margin-right: 14px;
   }
 
   .footer_btns {
@@ -209,9 +211,4 @@
     margin-bottom: 8px;
   }
 
-  .topBtn {
-    bottom: 50px;
-    right: 30px;
-    font-size: 38px;
-  }
 }
