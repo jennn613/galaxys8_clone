@@ -17,7 +17,6 @@ document.addEventListener ('scroll', ()=> {
 
 });
 
-
 //heaer 메뉴에 hover일 때 ::before 나타내기
 
 const headerList = document.querySelectorAll('.header_nav_list_item');
@@ -54,10 +53,12 @@ list.addEventListener('mouseleave', (a) => {
 
 // header toggle 눌렀을 때 메뉴 보이기
 
-const headerToggle = document.querySelector('.header_toggle');
+// const headerToggle = document.querySelector('.header_toggle');
+// const hiddenSection = document.querySelector('.toggle_menu');
 
-// headerToggle.addEventListener('click', () => {
-
+// headerToggle.addEventListener('click', (a)=> {
+// a.preventDefault();
+// hiddenSection.style.display = 'block';
 // });
 
 

@@ -82,7 +82,7 @@
   background-color: var(--color-skyblue);
   position: absolute;
   top:-2px;
-  transition: all 340ms ease-in;
+  transition: all 400ms ease-in;
 }
 
 .header_nav_list {
