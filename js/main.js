@@ -42,11 +42,50 @@ document.addEventListener ('scroll', ()=> {
 
 //heaer 메뉴에 hover일 때 ::before 나타내기
 
-// const headerList = document.querySelectorAll('.header_nav_list_item');
-// const headerListBefore = getComputedStyle(headerList, ':before').content;
-// console.log(headerListBefore)
+const headerList = document.querySelectorAll('.header_nav_list_item');
+const headerListLine = document.querySelector('.header_nav_list_hover');
 
-// let headerListWidth = headerList[0].offsetWidth;
+function showLine() {
+headerListLine.style.display ='block';
+headerListLine.style.width = headerList[0].offsetWidth + 'px';
+headerListLine.style.left= headerList[0].offsetLeft + 'px';
+}
+
+
+headerList.forEach(function(list, i){
+    
+    showLine();
+
+list.addEventListener('mouseenter', (a) => {
+    
+    a.preventDefault();
+
+headerListLine.style.display ='block';
+headerListLine.style.width = list.offsetWidth + 'px';
+headerListLine.style.left= list.offsetLeft + 'px';
+
+})
+
+list.addEventListener('mouseleave', (a) => {
+
+    a.preventDefault();
+    setTimeout(() => {
+        showLine();
+    }, 300);
+})
+});
+
+
+
+// headerListWidthH.addEventListener('mouseenter', () => {
+
+//     headerListLine.style.display = 'block';
+//     headerListLine.style.width = headerListWidthH + 'px';
+
+// }) 
+ 
+
+
 
 // headerList.addEventListener('mouseenter', (a)=> {
 // a.preventDefault();
@@ -69,16 +108,16 @@ document.addEventListener ('scroll', ()=> {
 
 //footer 버튼 누르면 아래 메뉴 생기게
 
-const netWorkBtn = document.querySelector('.footer_settings_network');
+// const netWorkBtn = document.querySelector('.footer_settings_network');
 
-const netWorkMode = document.querySelector('.footer_settings_network_options');
+// const netWorkMode = document.querySelector('.footer_settings_network_options');
 
-netWorkBtn.addEventListener('click', (a) => {
+// netWorkBtn.addEventListener('click', (a) => {
 
-    a.preventDefault();
-    netWorkMode.style.display = 'block';
-    netWorkMode.style.height = 'auto';
-})
+//     a.preventDefault();
+//     netWorkMode.style.display = 'block';
+//     netWorkMode.style.height = 'auto';
+// })
 
 
 // footer버튼 누르면 darkmode로 바꾸기
@@ -109,5 +148,13 @@ document.addEventListener ('scroll', ()=> {
     else {
         topBtn.style.display= 'block';
     }
+
+});
+
+// footer more 누르면 아래 div block, 보이기
+
+footerBtn[0].addEventListener('click', (a)=> {
+    a.preventDefault();
+    scrollTop();
 
 });
