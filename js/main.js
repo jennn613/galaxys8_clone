@@ -96,13 +96,47 @@ list.addEventListener('mouseleave', (a) => {
 // })
 
 
+
+const topBtn = document.querySelector('.topBtn'); //고정된 버튼
+const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
+const footerBtn = footerBtnParent.querySelectorAll('a');
+const textSection = document.querySelector('#section_text_wrap');
+let textSectionY = textSection.getBoundingClientRect().y;
+
+function scrollTop() {
+    window.scrollTo({top: 0, behavior:'smooth'});
+}
+
+function scrollDown() {
+    window.scrollTo({top:textSectionY, behavior: 'smooth'});
+}
+
+//topBtn header 높이 만큼 내렸을 때 위로 가게, scroll 0일 때는 아래로 가게
+
+document.addEventListener('scroll', ()=> {
+
+    if(window.scrollY > headerHeight){
+        topBtn.style.transform = 'rotate(180deg)';
+        topBtn.addEventListener('click', ()=> {
+            scrollTop();
+        });
+    }
+    else {
+        topBtn.style.transform = 'rotate(0)';
+        topBtn.addEventListener('click', ()=> {
+            scrollDown();
+        });
+    }
+  
+})
+
 //footer로 스크롤시 topbtn 사라지게
 const footerWrap = document.querySelector('#footer_wrap');
-let footerHeight = footerWrap.getBoundingClientRect().top;
+let footerY = footerWrap.getBoundingClientRect().y;
 
 document.addEventListener ('scroll', ()=> {
     
-    if(window.scrollY > footerHeight)
+    if(window.scrollY > footerY)
     {
         topBtn.style.display= 'none';
     }
@@ -112,6 +146,7 @@ document.addEventListener ('scroll', ()=> {
 
 });
 
+
 // footer more 누르면 아래 div block, 보이기
 
 footerBtn[0].addEventListener('click', (a)=> {
@@ -120,24 +155,10 @@ footerBtn[0].addEventListener('click', (a)=> {
 
 });
 
-//버튼 클릭 시 맨 위로
-const topBtn = document.querySelector('.topBtn'); //고정된 버튼
-const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
-const footerBtn = footerBtnParent.querySelectorAll('a');
-
-function scrollTop() {
-    window.scrollTo({top:0, behavior:'smooth'});
-}
-
-topBtn.addEventListener('click', ()=> {
-
-    scrollTop();
-
-});
+//footer back to top 누르면 맨 위로 가게
 
 footerBtn[1].addEventListener('click', (a)=> {
     a.preventDefault();
     scrollTop();
 
 });
-

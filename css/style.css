@@ -97,6 +97,7 @@
 }
 
 
+
 /* header */
 
 /* section */
@@ -557,6 +558,6 @@
   height: auto;
   color: var(--color-letter-grey);
   position: fixed;
-
   cursor: pointer;
+  transition: all 300ms ease-in;
 }
