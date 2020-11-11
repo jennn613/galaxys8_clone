@@ -1,27 +1,5 @@
 'use strict';
 
-//버튼 클릭 시 맨 위로
-const topBtn = document.querySelector('.topBtn'); //고정된 버튼
-const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
-const footerBtn = footerBtnParent.querySelectorAll('a');
-
-function scrollTop() {
-    window.scrollTo({top:0, behavior:'smooth'});
-}
-
-topBtn.addEventListener('click', ()=> {
-
-    scrollTop();
-
-});
-
-footerBtn[1].addEventListener('click', (a)=> {
-    a.preventDefault();
-    scrollTop();
-
-});
-
-
 //header불투명하게
 
 const header = document.querySelector('#header_wrap'); //header
@@ -51,7 +29,6 @@ headerListLine.style.width = headerList[0].offsetWidth + 'px';
 headerListLine.style.left= headerList[0].offsetLeft + 'px';
 }
 
-
 headerList.forEach(function(list, i){
     
     showLine();
@@ -69,38 +46,22 @@ headerListLine.style.left= list.offsetLeft + 'px';
 list.addEventListener('mouseleave', (a) => {
 
     a.preventDefault();
-    setTimeout(() => {
+
         showLine();
-    }, 300);
 })
 });
 
 
+// header toggle 눌렀을 때 메뉴 보이기
 
-// headerListWidthH.addEventListener('mouseenter', () => {
+const headerToggle = document.querySelector('.header_toggle');
 
-//     headerListLine.style.display = 'block';
-//     headerListLine.style.width = headerListWidthH + 'px';
+// headerToggle.addEventListener('click', () => {
 
-// }) 
- 
-
-
-
-// headerList.addEventListener('mouseenter', (a)=> {
-// a.preventDefault();
-// headerListBefore.style.display ='block';
-// headerListBefore.style.width = headerListWidth + 'px';
 // });
 
-// headerList.addEventListener('mouseleave', (a)=> {
-// a.preventDefault();
-// headerListBefore.style.display ='block';
-// headerListBefore.style.width = headerListWidth + 'px';
-// });
 
-// color 메뉴에 hover일 때 ::after 나타내기
-
+// color 메뉴에 hover일 때 아래 선 나타내기
 
 
 //color slider
@@ -109,7 +70,6 @@ list.addEventListener('mouseleave', (a) => {
 //footer 버튼 누르면 아래 메뉴 생기게
 
 // const netWorkBtn = document.querySelector('.footer_settings_network');
-
 // const netWorkMode = document.querySelector('.footer_settings_network_options');
 
 // netWorkBtn.addEventListener('click', (a) => {
@@ -158,3 +118,25 @@ footerBtn[0].addEventListener('click', (a)=> {
     scrollTop();
 
 });
+
+//버튼 클릭 시 맨 위로
+const topBtn = document.querySelector('.topBtn'); //고정된 버튼
+const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
+const footerBtn = footerBtnParent.querySelectorAll('a');
+
+function scrollTop() {
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+topBtn.addEventListener('click', ()=> {
+
+    scrollTop();
+
+});
+
+footerBtn[1].addEventListener('click', (a)=> {
+    a.preventDefault();
+    scrollTop();
+
+});
+
