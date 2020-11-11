@@ -1,5 +1,4 @@
-@media only screen and (min-width: 320px) and (max-width: 767px)
- {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   /* #header_wrap {
     left: 0;
     transform: translateX(0);
@@ -11,16 +10,16 @@
     display: none;
   }
 
-  .header_nav_list_item{
+  .header_nav_list_item {
     font-size: 12px;
   }
 
   .header_nav_list_item:not(:last-child) {
     margin-right: 20px;
   }
- .header_toggle {
-   width: 24px;
- }
+  .header_toggle {
+    width: 24px;
+  }
 
   .header_toggle > a > span:first-child {
     display: none;
@@ -37,11 +36,10 @@
     margin-top: 50px;
   }
 
-.intro_background > img:first-child{
-  display: none;
-}
+  .intro_background > img:first-child {
+    display: none;
+  }
 
- 
   #section_text_wrap {
     padding: 80px 40px;
   }
@@ -51,10 +49,9 @@
     line-height: 150%;
   }
 
-  .device_color_wrap 
-  {width: 100%;
+  .device_color_wrap {
+    width: 100%;
     padding: 40px 0;
- 
   }
   .color {
     margin: 100px auto 0 auto;
@@ -62,55 +59,53 @@
 
   .color_nav {
     padding-top: 26.3158vw;
-   }
+  }
 
-   .device_color_wrap{
-     flex-direction: column-reverse;
-   }
+  .device_color_wrap {
+    flex-direction: column-reverse;
+  }
 
+  .color_nav_device_list > a {
+    font-size: 4.7368vw;
+  }
 
-   .color_nav_device_list > a {
-     font-size: 4.7368vw;
-   }
+  .color_nav_device_list:last-of-type {
+    margin-right: 0;
+  }
 
-.color_nav_device_list:last-of-type
-{margin-right: 0;}
-   
-  
-   .color_list_item {
+  .color_list_item {
     margin-bottom: 40px;
     margin-left: 10.5263vw;
-   
   }
- 
-   .color_list_item > a 
-   {  font-size: 20px; 
- }
-  
- .color_list_item::before {
-  width: 16px;
-  height: 16px;
- left: -28px;
-}
 
-   .color_device_pic {
+  .color_list_item > a {
+    font-size: 20px;
+  }
+
+  .color_list_item::before {
+    width: 16px;
+    height: 16px;
+    left: -28px;
+  }
+
+  .color_device_pic {
     width: 73.6842vw;
-    height: 89.4737vw;   margin: 0 auto;}
-  
-    .color_device_chevron_indicator {
-      width: 78.9474vw;}
+    height: 89.4737vw;
+    margin: 0 auto;
+  }
 
-      .color_device_btn_indicator >a {
-     
-        width: 12px;
-        height: 12px;
-       
-        }
-        .color_device_btn_indicator >a:not(:last-child){
-          margin-right: 7.8947vw;
-        }
+  .color_device_chevron_indicator {
+    width: 78.9474vw;
+  }
 
-  
+  .color_device_btn_indicator > a {
+    width: 12px;
+    height: 12px;
+  }
+  .color_device_btn_indicator > a:not(:last-child) {
+    margin-right: 7.8947vw;
+  }
+
   #article_specifications {
     flex-direction: column;
     justify-content: inherit;
@@ -149,7 +144,6 @@
     margin-bottom: 60px;
   }
 
-
   #article_camera {
     background: #000;
     padding: 80px 0 0;
@@ -158,7 +152,6 @@
   }
 
   .camera_text {
-
     line-height: 240%;
     text-align: center;
     align-items: center;
@@ -182,7 +175,6 @@
     display: none;
   }
 
-  
   .footer_inner {
     padding-top: 90px;
     display: flex;
@@ -195,19 +187,18 @@
     top: 40px;
   }
 
-  .footer_share> span {
+  .footer_share > span {
     margin-left: 10px;
   }
 
   .footer_settings {
-
     font-size: 10px;
     margin-bottom: 30px;
   }
 
-.footer_settings_color {
-  margin: 20px 0;
-}
+  .footer_settings_color {
+    margin: 20px 0;
+  }
 
   .footer_settings_color > a {
     height: 10px;
@@ -215,12 +206,15 @@
 
   .footer_settings_global_links {
     font-size: 10px;
+  }
 
+  .footer_settings_network > dd {
+    background-color: white;
+    width: 153px;
   }
 
   .footer_settings_global_links > a {
     margin: 0 12px 20px 0;
-
   }
 
   .footer_settings_network {
@@ -228,7 +222,6 @@
     float: inherit;
     margin-bottom: 12px;
   }
- 
 
   .footer_settings_network > a {
     display: block;
@@ -242,16 +235,15 @@
     font-size: 20px;
   }
 
-  .footer_policy > a, .footer_policy > p {
+  .footer_policy > a,
+  .footer_policy > p {
     font-size: 10px;
   }
 
-  
   .footer_policy_links {
-
     font-size: 10px;
     margin-top: 10px;
-   word-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .footer_policy_links > a {
@@ -259,8 +251,7 @@
     margin-bottom: 4px;
   }
 
-.footer_btns {
-  position: inherit;
-}
-
+  .footer_btns {
+    position: inherit;
+  }
 }

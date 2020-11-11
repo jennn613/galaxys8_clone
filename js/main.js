@@ -175,8 +175,7 @@ const netWorkMenuList = netWorkMenu.querySelectorAll('a'); // dd의 a
 netWorkBtn.addEventListener('click', (a) => {
 
     a.preventDefault();
-    netWorkMenu.style.width = netWorkBtnWidth + 'px';
-    
+
     netWorkMenu.style.top = netWorkBtnHeight + 'px';
     
     const netWorkMenuNone =  window.getComputedStyle(netWorkMenu).display === 'none';
