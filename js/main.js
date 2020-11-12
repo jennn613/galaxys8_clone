@@ -142,13 +142,25 @@ deviceSlider.style.width = 'devicePicWidth' * devicePicList.length; //slider 가
 //for(let i =0; i <devicePicList.length; i++){
    // speakerBoxImg[i].style.backgroundImage = 'url(../css/src/img/s'+ (i+1) +'.jpg)';} 
 for(let i=0; i<devicePicList.length; i++) {
-    deviceImg[i].src = "../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c"+i+"-0"+i+".jpg"
+    // deviceImg[i].setAttribute('src', `../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c${i}-0${i}.jpg`);
+
+    var j = 0; 
+    if(i < 10){
+        j = '0' + (i+1);
+    }else{
+        j = i+1;
+    }
+
+    let jpgFile = '../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c' + (i+1)+ '-' + j + '.jpg';
+    // deviceImg[i].setAttribute('src', jpgFile);
+    deviceImg[i].src = jpgFile;
 }
 
    for(let i=0; i < picShow; i++) {
     const copyLastBox = devicePicList[devicePicList.length-(i+1)].cloneNode(true);
     deviceSlider.prepend(copyLastBox);
 } //마지막 박스 복사 
+
 
 const topBtn = document.querySelector('.topBtn'); //고정된 버튼
 const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
