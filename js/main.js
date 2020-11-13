@@ -214,8 +214,12 @@ let devicePicWidth = devicePicListAdded[0].offsetWidth; //사진 하나 가로
 deviceSlider.style.width = devicePicWidth * newPicList.length + 'px';
 
 deviceSlider.style.marginLeft = -devicePicWidth + 'px';
+// indicator class 초기화
+colorIndicator.forEach(function(indi){
+    indi.classList.remove('active');});
 
 let imgIdx = 0 ;
+colorIndicator[imgIdx].classList.add('active');
 
 colorChevron[0].addEventListener('click', (a) => {
 
@@ -228,6 +232,17 @@ if(imgIdx <= -1){
     deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
     imgIdx = devicePicListAdded.length - picShow;
 }
+
+colorIndicator.forEach((indi) => {
+    indi.classList.remove('active'); //active class 제거해주기 = default
+});
+
+if(imgIdx >= 0){
+    colorIndicator[imgIdx].classList.add('active'); //눌렀을 때 추가해주기
+
+  }else{
+    colorIndicator[devicePicListAdded.length - picShow].classList.add('active'); //눌렀을 때 추가해주기 
+  }
 
 });
 
@@ -243,7 +258,34 @@ if(imgIdx >= devicePicListAdded.length - picShow){
     imgIdx = -1;
 }
 
+colorIndicator.forEach((indi) => {
+    indi.classList.remove('active'); //active class 제거해주기 = default
 });
+
+if(imgIdx >= 0){
+    colorIndicator[imgIdx].classList.add('active'); //눌렀을 때 추가해주기
+
+  }else{
+    colorIndicator[devicePicListAdded.length - picShow].classList.add('active'); //눌렀을 때 추가해주기 
+  }
+
+});
+
+console.log(colorIndicator)
+
+colorIndicator.forEach((indi, idx) => {
+
+    indi.addEventListener('click', (e)=> {
+        e.preventDefault();
+
+        deviceSlider.style.left = -devicePicWidth * idx + 'px';
+
+        colorIndicator.forEach((i) => {
+            i.classList.remove('active');
+        });
+        indi.classList.add('active');
+    });
+    });
 
 const topBtn = document.querySelector('.topBtn'); //고정된 버튼
 const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
