@@ -272,20 +272,24 @@
 }
 
 .color_device_pic_device_slider {
+
   display: block;
   width: 100%;
   height: 100%;
 }
 .color_device_pic_device_slider > li {
+  float: left;
   width: 100%;
   height: 100%;
 }
 .color_device_pic_device_slider > li > figure {
+  
   width: 100%;
   height: 100%;
 }
 
 .color_device_pic_device_slider > li > figure > img {
+  
   width: 100%;
   height: auto;
 }

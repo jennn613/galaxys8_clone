@@ -128,22 +128,46 @@ const colorChevron = colorChevronWrap.querySelectorAll('a'); // chevrons
 const colorIndicatorWrap = document.querySelector('.color_device_btn_indicator');
 const colorIndicator = colorIndicatorWrap.querySelectorAll('a') //indicators
 
-
 let deviceFig; //figure
 let deviceImg; //img
+
 for(let i=0; i<devicePicList.length; i++){
     deviceFig = devicePicList[i].querySelectorAll('figure'); 
     deviceImg = deviceFig[i].querySelectorAll('img');
 }
 
-const devicePicListAdd = document.createElement('li'); //li 추가
-const devicePicListFigAdd =document.createElement('figure'); //figure 추가
-const devicePicListFigImgAdd = document.createElement('img'); // img 추가
+let imgUrl; // s8 사진 받아오기
 
-for(let i=0; i<picShow; i++){
-    const liAdd = devicePicList[0].cloneNode(true);
-    deviceSlider.prepend(liAdd); //li 복제
-}
+//s8 c1
+
+function sOne() {
+    for(let i=0; i<devicePicNum; i++){
+    
+    let devicePicListAdd = document.createElement('li'); //li 추가
+    let liContent =  `<figure><img src=""><figcaption class="hidden"></figcaption></figure>`;
+
+    imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c1-0' +  (i+1) + '.jpg';
+
+    devicePicListAdd.innerHTML = liContent;
+    deviceSlider.append(devicePicListAdd);
+
+    deviceImg = devicePicListAdd.querySelectorAll('img');
+
+    deviceImg.forEach(function(pic){
+        pic.setAttribute('src', imgUrl);
+
+    });
+}};
+
+sOne(); //평상시 s c1이 보이게
+
+
+// for(let i=0; i<devicePicNum; i++){
+//     // let imgFile = 'test_0';
+    
+//     // let liContent =  `<figure><img src="${imgUrl+imgFile + (i+1)}"><figcaption class="hidden">${figCon}</figcaption></figure>`;
+
+// }
 
 //colorListItems[0].addEventListener('click', (a) => {
 //a.preventDefault();
@@ -167,7 +191,8 @@ for(let i=0; i<picShow; i++){
 //     deviceSlider.prepend(copyLastBox);
 // } //마지막 박스 복사 
 
-// deviceSlider.style.width = 'devicePicWidth' * devicePicList.length; //slider 가로 늘리기
+// deviceSlider.style.width = devicePicWidth * devicePicList.length + 'px'; //slider 가로 늘리기
+// deviceSlider.style.backgroundColor = 'salmon'; //slider 가로 늘리기
 
 
 const topBtn = document.querySelector('.topBtn'); //고정된 버튼
