@@ -232,6 +232,7 @@
   transform: translateY(-50%);
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100000;
 }
 
 .color_device_chevron_indicator > a {
@@ -242,7 +243,6 @@
 .color_device_btn_indicator {
   width: 100%;
   height: auto;
-
   display: flex;
   justify-content: center;
   position: absolute;
@@ -269,21 +269,23 @@
 .color_device_pic_device {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .color_device_pic_device_slider {
-
-  display: block;
   width: 100%;
+  display: block;
   height: 100%;
+  position: relative;
+transition: all 300ms ease-in;
 }
+
 .color_device_pic_device_slider > li {
   float: left;
-  width: 100%;
   height: 100%;
+
 }
 .color_device_pic_device_slider > li > figure {
-  
   width: 100%;
   height: 100%;
 }

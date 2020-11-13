@@ -107,7 +107,6 @@ const devicePicWrap = document.querySelector('.color_device_pic_device'); //div
 const deviceSlider = document.querySelector('.color_device_pic_device_slider'); //ul
 const devicePicList = deviceSlider.querySelectorAll('li'); //li
 
-let devicePicWidth = devicePicWrap.offsetWidth; //사진 하나 가로
 const devicePicNum = 3; // 디바이스 하나당 사진 개수
 const devicePicColorNum = 3; // 블랙, 블루, 핑크 색 개수
 let picShow = 1; // 보일 사진 개수
@@ -138,9 +137,8 @@ for(let i=0; i<devicePicList.length; i++){
 
 let imgUrl; // s8 사진 받아오기
 
-//s8 c1
-
-function sOne() {
+//s8 c1 (black)
+function sBlack() {
     for(let i=0; i<devicePicNum; i++){
     
     let devicePicListAdd = document.createElement('li'); //li 추가
@@ -158,42 +156,94 @@ function sOne() {
 
     });
 }};
-
-sOne(); //평상시 s c1이 보이게
-
-
-// for(let i=0; i<devicePicNum; i++){
-//     // let imgFile = 'test_0';
+//s8 c2 (Coral Blue)
+// function sBlue() {
+//     for(let i=0; i<devicePicNum; i++){
     
-//     // let liContent =  `<figure><img src="${imgUrl+imgFile + (i+1)}"><figcaption class="hidden">${figCon}</figcaption></figure>`;
+//     let devicePicListAdd = document.createElement('li'); //li 추가
+//     let liContent =  `<figure><img src=""><figcaption class="hidden"></figcaption></figure>`;
 
-// }
+//     imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c2-0' +  (i+1) + '.jpg';
 
-//colorListItems[0].addEventListener('click', (a) => {
-//a.preventDefault();
-//});
+//     devicePicListAdd.innerHTML = liContent;
+//     deviceSlider.append(devicePicListAdd);
 
-// for(let i=0; i<devicePicNum; i++) {
-//     // deviceImg[i].setAttribute('src', `../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c${i}-0${i}.jpg`);
+//     deviceImg = devicePicListAdd.querySelectorAll('img');
 
-//     let j = 0; 
-//     if(i < devicePicNum){
-//         j = '0' + (i+1);
-//     }
+//     deviceImg.forEach(function(pic){
+//         pic.setAttribute('src', imgUrl);
 
-//     let deviceJpg = '../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c' + (i+1) + '-' +  j + '.jpg';
-//     // deviceImg[i].setAttribute('src', deviceJpg);
-//     deviceImg[i].src = deviceJpg;
-// }
+//     });
+// }};
 
-//    for(let i=0; i < picShow; i++) {
-//     const copyLastBox = devicePicList[devicePicList.length-(i+1)].cloneNode(true);
-//     deviceSlider.prepend(copyLastBox);
-// } //마지막 박스 복사 
+// //s8 c3 (Rose Pink)
+// function sPink() {
+//     for(let i=0; i<devicePicNum; i++){
+    
+//     let devicePicListAdd = document.createElement('li'); //li 추가
+//     let liContent =  `<figure><img src=""><figcaption class="hidden"></figcaption></figure>`;
 
-// deviceSlider.style.width = devicePicWidth * devicePicList.length + 'px'; //slider 가로 늘리기
-// deviceSlider.style.backgroundColor = 'salmon'; //slider 가로 늘리기
+//     imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c3-0' +  (i+1) + '.jpg';
 
+//     devicePicListAdd.innerHTML = liContent;
+//     deviceSlider.append(devicePicListAdd);
+
+//     deviceImg = devicePicListAdd.querySelectorAll('img');
+
+//     deviceImg.forEach(function(pic){
+//         pic.setAttribute('src', imgUrl);
+
+//     });
+// }};
+
+sBlack(); //평상시 s c1이 보이게
+
+const devicePicListAdded = deviceSlider.querySelectorAll('li'); //li
+
+for(let i=0; i<picShow; i++){
+    let copyLastBox = devicePicListAdded[devicePicListAdded.length-(i+1)].cloneNode(true);
+    deviceSlider.prepend(copyLastBox);
+} // 마지막 박스 복사 해주기
+
+devicePicListAdded.forEach(function(list){
+list.style.width = devicePicWrap.offsetWidth + 'px';
+}); // li width 값을 div width로
+
+const newPicList = deviceSlider.querySelectorAll('li');
+let devicePicWidth = devicePicListAdded[0].offsetWidth; //사진 하나 가로
+deviceSlider.style.width = devicePicWidth * newPicList.length + 'px';
+
+deviceSlider.style.marginLeft = -devicePicWidth + 'px';
+
+let imgIdx = 0 ;
+
+colorChevron[0].addEventListener('click', (a) => {
+
+a.preventDefault();
+
+imgIdx--;
+deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+
+if(imgIdx <= -1){
+    deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+    imgIdx = devicePicListAdded.length - picShow;
+}
+
+});
+
+colorChevron[1].addEventListener('click', (a) => {
+
+a.preventDefault();
+
+imgIdx++;
+deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+
+if(imgIdx >= devicePicListAdded.length - picShow){
+    deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+    imgIdx = -1;
+}
+
+});
 
 const topBtn = document.querySelector('.topBtn'); //고정된 버튼
 const footerBtnParent = document.querySelector('.footer_btns'); //버튼 parent
