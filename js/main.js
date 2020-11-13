@@ -138,13 +138,30 @@ for(let i=0; i<devicePicList.length; i++){
 let imgUrl; // s8 사진 받아오기
 
 //s8 c1 (black)
-function sBlack() {
+function sDeviceImge(color) {
+
+    deviceSlider.innerHTML = " ";
+    let deviceColor;
+    switch(color){
+        case 0:
+            deviceColor = 'c1';
+            break;
+        case 1:
+            deviceColor = 'c2';
+            break;
+        case 2:
+            deviceColor = 'c3';
+            break;
+        default:
+            deviceColor = 'c1';
+    }
+    
     for(let i=0; i<devicePicNum; i++){
     
     let devicePicListAdd = document.createElement('li'); //li 추가
     let liContent =  `<figure><img src=""><figcaption class="hidden"></figcaption></figure>`;
 
-    imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c1-0' +  (i+1) + '.jpg';
+    imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-'+deviceColor+'-0' +  (i+1) + '.jpg';
 
     devicePicListAdd.innerHTML = liContent;
     deviceSlider.append(devicePicListAdd);
@@ -156,47 +173,14 @@ function sBlack() {
 
     });
 }};
-//s8 c2 (Coral Blue)
-// function sBlue() {
-//     for(let i=0; i<devicePicNum; i++){
-    
-//     let devicePicListAdd = document.createElement('li'); //li 추가
-//     let liContent =  `<figure><img src=""><figcaption class="hidden"></figcaption></figure>`;
 
-//     imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c2-0' +  (i+1) + '.jpg';
-
-//     devicePicListAdd.innerHTML = liContent;
-//     deviceSlider.append(devicePicListAdd);
-
-//     deviceImg = devicePicListAdd.querySelectorAll('img');
-
-//     deviceImg.forEach(function(pic){
-//         pic.setAttribute('src', imgUrl);
-
-//     });
-// }};
-
-// //s8 c3 (Rose Pink)
-// function sPink() {
-//     for(let i=0; i<devicePicNum; i++){
-    
-//     let devicePicListAdd = document.createElement('li'); //li 추가
-//     let liContent =  `<figure><img src=""><figcaption class="hidden"></figcaption></figure>`;
-
-//     imgUrl ='../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c3-0' +  (i+1) + '.jpg';
-
-//     devicePicListAdd.innerHTML = liContent;
-//     deviceSlider.append(devicePicListAdd);
-
-//     deviceImg = devicePicListAdd.querySelectorAll('img');
-
-//     deviceImg.forEach(function(pic){
-//         pic.setAttribute('src', imgUrl);
-
-//     });
-// }};
-
-sBlack(); //평상시 s c1이 보이게
+sDeviceImge(); //default로 s c1이 보이게
+colorListItems.forEach(function(btn, i){
+    btn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        sDeviceImge(i);
+    });
+});
 
 const devicePicListAdded = deviceSlider.querySelectorAll('li'); //li
 
@@ -270,8 +254,6 @@ if(imgIdx >= 0){
   }
 
 });
-
-console.log(colorIndicator)
 
 colorIndicator.forEach((indi, idx) => {
 
