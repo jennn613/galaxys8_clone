@@ -271,21 +271,21 @@
   height: 100%;
 }
 
-.color_device_pic_device_s8 {
+.color_device_pic_device_slider {
   display: block;
   width: 100%;
   height: 100%;
 }
-.color_device_pic_device_s8 > li {
+.color_device_pic_device_slider > li {
   width: 100%;
   height: 100%;
 }
-.color_device_pic_device_s8 > li > figure {
+.color_device_pic_device_slider > li > figure {
   width: 100%;
   height: 100%;
 }
 
-.color_device_pic_device_s8 > li > figure > img {
+.color_device_pic_device_slider > li > figure > img {
   width: 100%;
   height: auto;
 }

@@ -103,63 +103,71 @@ list.addEventListener('mouseleave', (a) => {
 //color slider
 
 //사진
-const devicePicWrap = document.querySelector('.color_device_pic_device');
-
-const deviceSlider = document.querySelector('.color_device_pic_device_s8'); //ul
-const devicePicList = deviceSlider.querySelectorAll('li');
-
-let devicePic; //figure
-let deviceImg; //img
-for(let i=0; i<devicePicList.length; i++){
-    devicePic = devicePicList[i].querySelectorAll('figure'); 
-    deviceImg = devicePic[i].querySelectorAll('img');
-}
+const devicePicWrap = document.querySelector('.color_device_pic_device'); //div
+const deviceSlider = document.querySelector('.color_device_pic_device_slider'); //ul
+const devicePicList = deviceSlider.querySelectorAll('li'); //li
 
 let devicePicWidth = devicePicWrap.offsetWidth; //사진 하나 가로
-
+const devicePicNum = 3; // 디바이스 하나당 사진 개수
+const devicePicColorNum = 3; // 블랙, 블루, 핑크 색 개수
 let picShow = 1; // 보일 사진 개수
 
 //색
 const colorList = document.querySelector('.color_list'); //ul
-const colorListItems = colorList.querySelectorAll('li');
+const colorListItems = colorList.querySelectorAll('li'); //li
 
-//디바이스
+//디바이스 s8, s8+
 //const colorNav = document.querySelector('.color_nav_device'); //ul
 //const colorNavList = colorNav.querySelectorAll('li'); //li
 
 // < >
-const colorChevronWrap = document.querySelector('.color_device_chevron_indicator'); //
+const colorChevronWrap = document.querySelector('.color_device_chevron_indicator');
 const colorChevron = colorChevronWrap.querySelectorAll('a'); // chevrons
 
-// 동그라미
+// 동그라미 인디케이터
 const colorIndicatorWrap = document.querySelector('.color_device_btn_indicator');
 const colorIndicator = colorIndicatorWrap.querySelectorAll('a') //indicators
 
 
-deviceSlider.style.width = 'devicePicWidth' * devicePicList.length; //slider 가로 늘리기
-
-
-//for(let i =0; i <devicePicList.length; i++){
-   // speakerBoxImg[i].style.backgroundImage = 'url(../css/src/img/s'+ (i+1) +'.jpg)';} 
-for(let i=0; i<devicePicList.length; i++) {
-    // deviceImg[i].setAttribute('src', `../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c${i}-0${i}.jpg`);
-
-    var j = 0; 
-    if(i < 10){
-        j = '0' + (i+1);
-    }else{
-        j = i+1;
-    }
-
-    let jpgFile = '../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c' + (i+1)+ '-' + j + '.jpg';
-    // deviceImg[i].setAttribute('src', jpgFile);
-    deviceImg[i].src = jpgFile;
+let deviceFig; //figure
+let deviceImg; //img
+for(let i=0; i<devicePicList.length; i++){
+    deviceFig = devicePicList[i].querySelectorAll('figure'); 
+    deviceImg = deviceFig[i].querySelectorAll('img');
 }
 
-   for(let i=0; i < picShow; i++) {
-    const copyLastBox = devicePicList[devicePicList.length-(i+1)].cloneNode(true);
-    deviceSlider.prepend(copyLastBox);
-} //마지막 박스 복사 
+const devicePicListAdd = document.createElement('li'); //li 추가
+const devicePicListFigAdd =document.createElement('figure'); //figure 추가
+const devicePicListFigImgAdd = document.createElement('img'); // img 추가
+
+for(let i=0; i<picShow; i++){
+    const liAdd = devicePicList[0].cloneNode(true);
+    deviceSlider.prepend(liAdd); //li 복제
+}
+
+//colorListItems[0].addEventListener('click', (a) => {
+//a.preventDefault();
+//});
+
+// for(let i=0; i<devicePicNum; i++) {
+//     // deviceImg[i].setAttribute('src', `../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c${i}-0${i}.jpg`);
+
+//     let j = 0; 
+//     if(i < devicePicNum){
+//         j = '0' + (i+1);
+//     }
+
+//     let deviceJpg = '../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-c' + (i+1) + '-' +  j + '.jpg';
+//     // deviceImg[i].setAttribute('src', deviceJpg);
+//     deviceImg[i].src = deviceJpg;
+// }
+
+//    for(let i=0; i < picShow; i++) {
+//     const copyLastBox = devicePicList[devicePicList.length-(i+1)].cloneNode(true);
+//     deviceSlider.prepend(copyLastBox);
+// } //마지막 박스 복사 
+
+// deviceSlider.style.width = 'devicePicWidth' * devicePicList.length; //slider 가로 늘리기
 
 
 const topBtn = document.querySelector('.topBtn'); //고정된 버튼
