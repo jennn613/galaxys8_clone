@@ -137,7 +137,6 @@ for(let i=0; i<devicePicList.length; i++){
 
 // let devicePicListAdd; //li를 추가해 줄 변수
 // let imgUrl; // img 를 추가해줄 변수
-
 let deviceColor, deviceType;
 let colorNum, deviceNum;
 
@@ -193,16 +192,91 @@ function sDeviceImg (color, device) {
         deviceImg.forEach(function(pic){
             pic.setAttribute('src', imgUrl);
         });
-    }// for    
+    }// for
+
+deviceSlider.style.left = 0; // default로 맨 처음 사진 보이게
+let devicePicListAdded = deviceSlider.querySelectorAll('li'); //새로 생긴 li 선택
+
+for(let i=0; i<picShow; i++) {
+    let copyLastBox = devicePicListAdded[devicePicListAdded.length-(i+1)].cloneNode(true);
+    deviceSlider.prepend(copyLastBox);
+}
+
+devicePicListAdded.forEach((pic)=> {
+    pic.style.width = devicePicWrap.offsetWidth + 'px';
+});
+
+let imgIdx = 0;
+
+let newPicList = deviceSlider.querySelectorAll('li'); //기존 박스 + copy 된 박스
+let devicePicWidth = devicePicListAdded[0].offsetWidth; //사진 하나 가로값 받아오기
+deviceSlider.style.width = devicePicWidth * newPicList.length + 'px'; //slider 길이 늘이기
+
+deviceSlider.style.marginLeft = -devicePicWidth + 'px';
+
+colorIndicator.forEach((indi)=> {
+    indi.classList.remove('active');
+});
+
+colorIndicator[imgIdx].classList.add('active');
+    
+
+colorChevron[0].addEventListener('click', (e)=> {
+e.preventDefault();
+
+imgIdx --;
+deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+
+
+if(imgIdx <= -1) {
+    deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+    imgIdx = devicePicListAdded.length - picShow;
+    colorIndicator[imgIdx].classList.add('active');
+}
+
+colorIndicator.forEach((indi)=> {
+    indi.classList.remove('active');
+});
+
+if(imgIdx >= 0){
+    colorIndicator[imgIdx].classList.add('active'); 
+  }
+  
+
+}); // < 눌렀을 때
+
+colorChevron[1].addEventListener('click', (e)=> {
+    e.preventDefault();
+    
+    if(imgIdx >= devicePicListAdded.length - picShow){
+        deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+        imgIdx = -1;
+    }
+    
+    imgIdx ++;
+    deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+
+colorIndicator.forEach((indi)=> {
+    indi.classList.remove('active');
+});
+
+if(imgIdx >= 0){
+    colorIndicator[imgIdx].classList.add('active'); 
+  } else {
+    colorIndicator[devicePicListAdded.length - picShow].classList.add('active');
+  }
+
+});
+
+
 } //sDeviceImg 끝
 
 sDeviceImg();
-// deviceColor, deviceType;
+
 colorListItems.forEach((color, i) => {
     color.addEventListener('click',(e)=> {
         e.preventDefault();
         sDeviceImg(i, deviceNum);
-        console.log(deviceNum)
     });
 
 }); // 각 color 눌렀을 때 sDeviceImg 로 값 리턴 해서 색상 변경해주기
