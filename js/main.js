@@ -242,7 +242,6 @@ if(imgIdx >= 0){
     colorIndicator[imgIdx].classList.add('active'); 
   }
   
-
 }); // < 눌렀을 때
 
 colorChevron[1].addEventListener('click', (e)=> {
@@ -267,6 +266,24 @@ if(imgIdx >= 0){
   }
 
 });
+
+colorIndicator.forEach((indiClick, i)=> {
+
+    indiClick.addEventListener('click', (e)=> {
+    e.preventDefault();
+
+    imgIdx = i;
+    deviceSlider.style.left = -devicePicWidth * imgIdx + 'px';
+
+    colorIndicator.forEach((indi) => {
+indi.classList.remove('active');
+    });
+
+    indiClick.classList.add('active');
+});
+
+});
+
 
 
 } //sDeviceImg 끝
