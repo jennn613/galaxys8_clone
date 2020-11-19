@@ -405,3 +405,9 @@ footerBtn[1].addEventListener('click', (a)=> {
     scrollTop();
 
 });
+
+// toggle click
+
+const toggleMenu = document.querySelector('.toggle_menu');
+
+toggleMenu.style.height = window.innerHeight + 'px';
