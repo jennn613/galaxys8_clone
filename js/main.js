@@ -21,7 +21,7 @@ document.addEventListener ('scroll', ()=> {
 
 //heaer 메뉴에 hover일 때 위에 선 보이기
 
-const headerList = document.querySelectorAll('.header_nav_list_item'); // header ul
+const headerList = document.querySelectorAll('.header_nav_list_item'); // header li
 const headerListLine = document.querySelector('.header_nav_list_hover'); //header list 위의 선
 
 function showLine() {
@@ -32,38 +32,36 @@ headerListLine.style.left= headerList[0].offsetLeft + 'px';
 
 headerList.forEach(function(list, i){
     
+    let liNum = i;
+
     showLine();
 
-list.addEventListener('mouseenter', (a) => {
+list.addEventListener('mouseenter', () => {
     
-    a.preventDefault();
-
 headerListLine.style.display ='block';
 headerListLine.style.width = list.offsetWidth + 'px';
 headerListLine.style.left= list.offsetLeft + 'px';
 
 });
 
-list.addEventListener('mouseleave', (a) => {
-
-    a.preventDefault();
+list.addEventListener('mouseleave', () => {
 
         showLine();
 });
 
+let headerListA = list.querySelectorAll('a');
+
+headerListA.forEach((a) => {
+        
+    a.addEventListener('focus', ()=> {
+        headerListLine.style.display ='block';
+
+        headerListLine.style.width = headerList[liNum].offsetWidth + 'px';
+        headerListLine.style.left= headerList[liNum].offsetLeft + 'px';
+    });
 });
 
-
-// header toggle 눌렀을 때 메뉴 보이기
-
-// const headerToggle = document.querySelector('.header_toggle');
-// const hiddenSection = document.querySelector('.toggle_menu');
-
-// headerToggle.addEventListener('click', (a)=> {
-// a.preventDefault();
-// hiddenSection.style.display = 'block';
-// });
-
+});
 
 // color nav에 hover일 때 아래 선 나타내기
 
@@ -77,8 +75,10 @@ function showColorNavLine() {
     colorNavLine.style.left= colorNavList[0].offsetLeft + 'px';
      }
 
-colorNavList.forEach(function(list){
+colorNavList.forEach(function(list, i){
     
+    let liNum = i;
+
     showColorNavLine();
 
 list.addEventListener('mouseenter', (a) => {
@@ -96,6 +96,15 @@ list.addEventListener('mouseleave', (a) => {
     a.preventDefault();
 
         showColorNavLine();
+});
+
+let colorNavListA = list.querySelectorAll('a');
+
+colorNavListA.forEach((a) => {
+    a.addEventListener('focus', ()=> {    
+        colorNavLine.style.display ='block';
+        colorNavLine.style.width = colorNavList[liNum].offsetWidth + 'px';
+        colorNavLine.style.left= colorNavList[liNum].offsetLeft + 'px';});
 });
 
 });
@@ -408,6 +417,7 @@ footerBtn[1].addEventListener('click', (a)=> {
 
 // toggle click
 
+const toggle = document.querySelector('.header_toggle');
 const toggleMenu = document.querySelector('.toggle_menu'); // toggle 전체 감싼 박스
 const toggleNav = document.querySelector('.products_nav'); // toggle nav
 const toggleNavMenu = document.querySelector('.products_nav_menu_list'); // nav ul
@@ -421,21 +431,7 @@ const toggleApps = document.querySelector('.apps'); //app 감싼 div
 
 const toggleExit = document.querySelector('.products_nav_exit'); // x 버튼
 
-toggleSlider.style.top = toggleNav.offsetHeight + 'px';
-toggleSlider.style.height = window.innerHeight + 'px';
-
-toggleProducts.style.width = window.innerWidth + 'px';
-toggleCampaign.style.width = window.innerWidth + 'px';
-toggleEvents.style.width = window.innerWidth + 'px';
-toggleApps.style.width = window.innerWidth + 'px';
-
-let menuNum = 4; //toggle menu 개수
-
-toggleSlider.style.width =  window.innerWidth * menuNum + 'px';
-
-toggleSlider.style.position = 'relative';
-
-
+// header hover, focus시 파란 선 보이게
 const navListLine = document.querySelector('.products_nav_menu_hover'); //header list 위의 선
 
 function toggleShowLine(){
@@ -468,8 +464,40 @@ toggleNavMenuList.forEach((list, j)=> {
         });
     });
     });
+function toggleMenuShow() {
+toggleSlider.style.paddingTop = toggleNav.offsetHeight + 'px';
 
+toggleProducts.style.width = window.innerWidth + 'px';
+toggleCampaign.style.width = window.innerWidth + 'px';
+toggleEvents.style.width = window.innerWidth + 'px';
+toggleApps.style.width = window.innerWidth + 'px';
 
+let menuNum = 4; //toggle menu 개수
 
+toggleSlider.style.width =  window.innerWidth * menuNum + 'px';
 
+toggleSlider.style.position = 'relative';
 
+toggleNavMenuList.forEach((list, i) => {
+list.addEventListener('click', (e)=> {
+e.preventDefault();
+
+toggleSlider.style.left= -window.innerWidth * i + 'px';
+});
+    });
+}
+
+toggle.addEventListener('click', ()=> {
+
+    toggleMenu.style.opacity=1;
+    toggleMenu.style.display='block';
+    toggleShowLine();
+    toggleMenuShow();
+});
+
+toggleExit.addEventListener('click', () => {
+
+    toggleMenu.style.opacity=0;
+    toggleMenu.style.display='none';
+
+});

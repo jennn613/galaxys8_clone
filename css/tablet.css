@@ -207,5 +207,94 @@
     margin-top: 14px;
     margin-bottom: 8px;
   } 
+/*  */
+
+.products_nav {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+  .products_nav_logo {
+    width: 100%;
+    float: inherit;
+   text-align: center;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .products_nav_logo > a  {
+    font-size: 20px;
+  }
+
+  .products_nav_menu_list{
+    text-align: center;
+  }
+
+  .products_nav_menu_list_item > a{
+    font-size: 14px;
+  }
+
+  .products_nav_menu_list_item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .products_nav_exit >a {
+    font-size: 22px;
+    top: 30%;
+  }
+
+  .products_nav_menu_hover {
+    bottom: -24px;
+  }
+
+  .toggle_menu_slider {
+    background-color: black;
+  }
+
+  .products_list_item {
+    width: 33.33333333%;
+    height: 220px;
+    margin-bottom: 40px;
+  }
+
+  .products_list_item > a > span {
+    font-size: 14px;
+    bottom: 4%;
+  }
+
+  .campaign_list_item{
+    height: 220px;
+
+  }
+
+  .campaign_list_item > a > span {
+    font-size: 14px;
+  }
+
+  .events_list_item {
+    float: left;
+    width: 50%;
+    height: 220px;
+  
+  }
+
+  .events_list_item > a > span {
+    font-size: 14px;
+  }
+ 
+  .apps_list_item {
+    float: left;
+    width: 50%;
+    height: 220px;
+    margin-bottom: 40px;
+  }
+
+  .apps_list_item > a > span {
+    font-size: 14px;
+  }
+
+  .toggle_menu_footer {
+    border-top: 1px solid white;
+  }
 
 }
