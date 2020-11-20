@@ -408,6 +408,68 @@ footerBtn[1].addEventListener('click', (a)=> {
 
 // toggle click
 
-const toggleMenu = document.querySelector('.toggle_menu');
+const toggleMenu = document.querySelector('.toggle_menu'); // toggle 전체 감싼 박스
+const toggleNav = document.querySelector('.products_nav'); // toggle nav
+const toggleNavMenu = document.querySelector('.products_nav_menu_list'); // nav ul
+const toggleNavMenuList = toggleNavMenu.querySelectorAll('li'); // li 선택
+const toggleSlider = document.querySelector('.toggle_menu_slider'); // 감싸고있는 큰 박스
 
-toggleMenu.style.height = window.innerHeight + 'px';
+const toggleProducts = document.querySelector('.products'); //products 감싼 div
+const toggleCampaign = document.querySelector('.campaign'); //campaign 감싼 div
+const toggleEvents = document.querySelector('.events'); // events 감싼 div
+const toggleApps = document.querySelector('.apps'); //app 감싼 div
+
+const toggleExit = document.querySelector('.products_nav_exit'); // x 버튼
+
+toggleSlider.style.top = toggleNav.offsetHeight + 'px';
+toggleSlider.style.height = window.innerHeight + 'px';
+
+toggleProducts.style.width = window.innerWidth + 'px';
+toggleCampaign.style.width = window.innerWidth + 'px';
+toggleEvents.style.width = window.innerWidth + 'px';
+toggleApps.style.width = window.innerWidth + 'px';
+
+let menuNum = 4; //toggle menu 개수
+
+toggleSlider.style.width =  window.innerWidth * menuNum + 'px';
+
+toggleSlider.style.position = 'relative';
+
+
+const navListLine = document.querySelector('.products_nav_menu_hover'); //header list 위의 선
+
+function toggleShowLine(){
+    navListLine.style.display ='block';
+    navListLine.style.width = toggleNavMenuList[0].offsetWidth + 'px';
+    navListLine.style.left= toggleNavMenuList[0].offsetLeft + 'px';
+};
+
+toggleShowLine();
+
+toggleNavMenuList.forEach((list, i)=> {
+list.addEventListener('click', ()=> {
+    navListLine.style.display ='block';
+    navListLine.style.width = toggleNavMenuList[i].offsetWidth + 'px';
+    navListLine.style.left= toggleNavMenuList[i].offsetLeft + 'px';
+});
+});
+
+toggleNavMenuList.forEach((list, j)=> {
+
+    let toggleNavMenuListA = list.querySelectorAll('a');
+
+    // console.log(toggleNavMenuListA)
+
+    toggleNavMenuListA.forEach((a) => {
+        a.addEventListener('focus', ()=> {
+            navListLine.style.display ='block';
+            navListLine.style.width = toggleNavMenuList[j].offsetWidth + 'px';
+            navListLine.style.left= toggleNavMenuList[j].offsetLeft + 'px';
+        });
+    });
+    });
+
+
+
+
+
