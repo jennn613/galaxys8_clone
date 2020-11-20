@@ -53,6 +53,7 @@
     width: 100%;
     padding: 40px 0;
   }
+
   .color {
     margin: 100px auto 0 auto;
   }
@@ -66,7 +67,7 @@
   }
 
   .color_nav_device_list > a {
-    font-size: 4.7368vw;
+    font-size: 22px;
   }
 
   .color_nav_device_list:last-of-type {
@@ -79,7 +80,7 @@
   }
 
   .color_list_item > a {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .color_list_item::before {
@@ -102,6 +103,7 @@
     width: 12px;
     height: 12px;
   }
+  
   .color_device_btn_indicator > a:not(:last-child) {
     margin-right: 7.8947vw;
   }

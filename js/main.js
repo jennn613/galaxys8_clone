@@ -1,3 +1,42 @@
+'use strict';
+
+const deviceSize = [
+    {type: 'mobile', size: 767},
+    {type: 'tablet', size: 1024},
+    {type: 'pc'}
+];
+
+const Resize = function(){
+let browserWidth = window.innerWidth;
+let type;
+
+for(let i=0; i<deviceSize.length; i++){
+    
+    if(browserWidth<=deviceSize[i].size){
+        type = deviceSize[i].type;
+        break;
+    }
+    else {
+        type = deviceSize[deviceSize.length-1].type;
+    }
+}
+return type;
+}
+
+const beforeWidth = Resize();
+
+window.addEventListener('resize', ()=> {
+    let afterWidth = Resize();
+    if (beforeWidth !== afterWidth){
+        window.location.reload();
+    }
+
+    sDeviceImg();
+    showLine();
+    showColorNavLine();
+    toggleShowLine();
+    toggleMenuShow();
+});
 
 const wrap = document.querySelector('#wrap');
 
@@ -184,7 +223,6 @@ function sDeviceImg (color, device) {
         deviceType = '../css/img_galaxy/galaxys8/galaxy-s8_gallery-color_normal-';
     }
 
-
     for(let i=0; i<devicePicNum; i++){
 
         let devicePicListAdd = document.createElement('li'); //li 추가해주는 변수
@@ -205,19 +243,25 @@ function sDeviceImg (color, device) {
 deviceSlider.style.left = 0; // default로 맨 처음 사진 보이게
 let devicePicListAdded = deviceSlider.querySelectorAll('li'); //새로 생긴 li 선택
 
+devicePicListAdded.forEach((li) => {
+li.style.width = devicePicWrap.offsetWidth + 'px';
+});
+
 for(let i=0; i<picShow; i++) {
     let copyLastBox = devicePicListAdded[devicePicListAdded.length-(i+1)].cloneNode(true);
     deviceSlider.prepend(copyLastBox);
 }
 
-devicePicListAdded.forEach((pic)=> {
-    pic.style.width = devicePicWrap.offsetWidth + 'px';
-});
 
 let imgIdx = 0;
 
 let newPicList = deviceSlider.querySelectorAll('li'); //기존 박스 + copy 된 박스
 let devicePicWidth = devicePicListAdded[0].offsetWidth; //사진 하나 가로값 받아오기
+
+devicePicListAdded.forEach((pic)=> {
+    pic.style.width = devicePicWrap.offsetWidth + 'px';
+});
+
 deviceSlider.style.width = devicePicWidth * newPicList.length + 'px'; //slider 길이 늘이기
 
 deviceSlider.style.marginLeft = -devicePicWidth + 'px';
@@ -463,6 +507,7 @@ toggleNavMenuList.forEach((list, j)=> {
         });
     });
     });
+
 function toggleMenuShow() {
 toggleSlider.style.paddingTop = toggleNav.offsetHeight + 'px';
 

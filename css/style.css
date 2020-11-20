@@ -669,7 +669,7 @@
 }
 
 .products_nav_menu_hover {
-  height: 4px;
+  height: 3px;
   background-color: var(--color-skyblue);
   position: absolute;
   left: 100px;
