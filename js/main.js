@@ -112,6 +112,7 @@ const colorNavLine = document.querySelector('.color_nav_line'); //line
      colorNavLine.style.width = colorNavList[0].offsetWidth + 'px';
      colorNavLine.style.left= colorNavList[0].offsetLeft + 'px';
       }
+      
       showColorNavLine();
     
       colorNavList.forEach((list, i)=> {
