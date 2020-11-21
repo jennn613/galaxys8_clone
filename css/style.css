@@ -593,15 +593,42 @@
 }
 
 .footer_sitemap {
+  display: none;
   width: 100%;
-  height: auto;
-  background-color: hotpink;
+  height: 0;
+  margin-top: 50px;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  border-top: 1px solid var(--color-light-grey);
+  position: absolute;
+
 }
 
+
 .footer_sitemap > div {
-  width: 100%;
-  height: 1000px;
+  width: auto;
+  height: auto;
 }
+.footer_sitemap > div > a {
+  display: block;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  color: var(--color-letter-grey);
+  margin-bottom: 50px;
+}
+
+.footer_sitemap > div > a:first-child,
+.footer_sitemap > div > a:nth-child(3) {
+  margin-bottom: 14px;
+  text-decoration: underline;
+}
+
+.footer_sitemap > div > span {
+  color: var(--color-letter-grey);
+  font-size: 14px;
+} 
+
 
 .topBtn {
   display: none;

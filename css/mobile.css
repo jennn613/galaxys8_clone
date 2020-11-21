@@ -348,4 +348,13 @@
     border-top: 1px solid white;
   }
 
+  .footer_sitemap {
+bottom: -340px;
+padding: 60px 10px;
+  }
+
+  .footer_sitemap > div >a, .footer_sitemap > div >span {
+    font-size: 12px;
+  }
+
 }

@@ -190,6 +190,7 @@
   .footer_btns {
     bottom:0;
     right: -24%;
+  
   }
 
   .footer_policy {
@@ -296,5 +297,15 @@
   .toggle_menu_footer {
     border-top: 1px solid white;
   }
+
+  
+  .footer_sitemap {
+    bottom: -400px;
+      }
+
+      .footer_sitemap > div >a, .footer_sitemap > div >span {
+        font-size: 12px;
+      }
+
 
 }

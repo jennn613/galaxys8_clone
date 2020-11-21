@@ -441,14 +441,42 @@ netWorkBtn.addEventListener('click', (a) => {
 
 });
 
+const footerSiteMap = document.querySelector('.footer_sitemap'); // footer 아래 숨겨진 메뉴
 
 // footer more 누르면 아래 div block, 보이기
 
-footerBtn[0].addEventListener('click', (a)=> {
-    a.preventDefault();
-    scrollTop();
 
+footerBtn[0].addEventListener('click', (e)=> {
+    e.preventDefault();
+    let footerBtnTxt = footerBtn[0].querySelector('span');
+    let footerBtnIcon = footerBtn[0].querySelector('i');
+
+    if(footerSiteMap.style.display === 'block'){
+
+        footerBtnTxt.innerText = 'more';
+        footerBtnIcon.style.transform = 'rotate(0)';
+        footerSiteMap.style.height = '0';
+
+        setTimeout(()=>{footerSiteMap.style.display = 'none'; }, 25);
+
+    }
+    else {
+
+        footerBtnTxt.innerText = 'close';
+        footerBtnIcon.style.transform = 'rotate(180deg)';
+
+        footerSiteMap.style.height = 'auto';
+        footerSiteMap.style.display = 'block';
+
+        window.scrollBy({
+            top: footerSiteMap.offsetHeight,
+            left: 0,
+            behavior: 'smooth'
+          });
+    }
 });
+
+
 
 //footer back to top 누르면 맨 위로 가게
 
