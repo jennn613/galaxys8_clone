@@ -384,7 +384,7 @@
 
   width: auto;
   height: 40%;
-  color: var(--color-light-grey);
+  color: var(--color-letter-grey);
   position: absolute;
   left: 0;
 
@@ -394,7 +394,7 @@
   cursor: pointer;
   width: auto;
   height: auto;
-  color: var(--color-light-grey);
+  color: var(--color-letter-grey);
   margin-left: 20px;
 }
 

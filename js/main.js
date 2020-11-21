@@ -550,11 +550,13 @@ toggleSlider.style.width =  window.innerWidth * menuNum + 'px';
 
 toggleSlider.style.position = 'relative';
 
+
 toggleNavMenuList.forEach((list, i) => {
 list.addEventListener('click', (e)=> {
 e.preventDefault();
 
 toggleSlider.style.left= -window.innerWidth * i + 'px';
+
 });
     });
 }
@@ -571,5 +573,8 @@ toggleExit.addEventListener('click', () => {
 
     toggleMenu.style.opacity=0;
     toggleMenu.style.display='none';
+    toggleSlider.style.left= 0;
+    toggleShowLine();
+
 
 });
