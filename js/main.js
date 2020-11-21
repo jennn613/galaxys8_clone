@@ -105,47 +105,36 @@ headerListA.forEach((a) => {
 
 const colorNav = document.querySelector('.color_nav_device'); //ul
 const colorNavList = colorNav.querySelectorAll('li'); //li
-const colorNavLine = colorNav.querySelector('.color_nav_line'); //line
+const colorNavLine = document.querySelector('.color_nav_line'); //line
 
-function showColorNavLine() {
-    colorNavLine.style.display ='block';
-    colorNavLine.style.width = colorNavList[0].offsetWidth + 'px';
-    colorNavLine.style.left= colorNavList[0].offsetLeft + 'px';
-     }
-
-colorNavList.forEach(function(list, i){
+ function showColorNavLine() {
+     colorNavLine.style.display ='block';
+     colorNavLine.style.width = colorNavList[0].offsetWidth + 'px';
+     colorNavLine.style.left= colorNavList[0].offsetLeft + 'px';
+      }
+      showColorNavLine();
     
-    let liNum = i;
-
-    showColorNavLine();
-
-list.addEventListener('mouseenter', (a) => {
-    
-    a.preventDefault();
-
-colorNavLine.style.display ='block';
-colorNavLine.style.width = list.offsetWidth + 'px';
-colorNavLine.style.left= list.offsetLeft + 'px';
-
-});
-
-list.addEventListener('mouseleave', (a) => {
-
-    a.preventDefault();
-
-        showColorNavLine();
-});
-
-let colorNavListA = list.querySelectorAll('a');
-
-colorNavListA.forEach((a) => {
-    a.addEventListener('focus', ()=> {    
+      colorNavList.forEach((list, i)=> {
+let num = i;
+    list.addEventListener('click', ()=> {
         colorNavLine.style.display ='block';
-        colorNavLine.style.width = colorNavList[liNum].offsetWidth + 'px';
-        colorNavLine.style.left= colorNavList[liNum].offsetLeft + 'px';});
-});
+        setTimeout(()=>{colorNavLine.style.width = colorNavList[num].offsetWidth / 2 + 'px';}, 100);
+        setTimeout(()=>{colorNavLine.style.width = colorNavList[num].offsetWidth + 'px';}, 120);
+        colorNavLine.style.left= colorNavList[i].offsetLeft + 'px';
+    });
+
+    const colorNavListA = list.querySelectorAll('a');
+
+    colorNavListA.forEach((a) => {
+        a.addEventListener('focus', ()=> {
+            colorNavLine.style.display ='block';
+            colorNavLine.style.width = colorNavList[num].offsetWidth + 'px';
+            colorNavLine.style.left= colorNavList[num].offsetLeft + 'px';
+        });
+    });
 
 });
+
 
 //color slider
 
